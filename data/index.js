@@ -4,7 +4,7 @@ export const portfolioItems = [
     title: "Palmyra Homes",
     url: "https://palmyrahomes.ca/",
     category: "Real Estate",
-    tags: ["Web Design", "Development"],
+    tags: ["Real Estate", "Development"],
     description: "Premium real estate platform for a Canadian property developer.",
     location: "Canada"
   },
@@ -13,7 +13,7 @@ export const portfolioItems = [
     title: "Mattakalappu",
     url: "https://mattakalappu.com/",
     category: "Community",
-    tags: ["Web Design", "Development"],
+    tags: ["Community", "Documentation"],
     description: "Community-focused digital platform celebrating culture and heritage.",
     location: "Sri Lanka"
   },
@@ -33,7 +33,7 @@ export const portfolioItems = [
     category: "Digital Agency",
     tags: ["Web Design", "Branding"],
     description: "Digital marketing agency site with services and case studies.",
-    location: "Sri Lanka"
+    location: "UAE"
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ export const portfolioItems = [
     category: "Corporate",
     tags: ["Web Design", "Development"],
     description: "Corporate group website for a diversified business conglomerate.",
-    location: "Sri Lanka"
+    location: "Canada"
   },
   {
     id: 6,
@@ -60,7 +60,7 @@ export const portfolioItems = [
     category: "Real Estate",
     tags: ["Web Design", "Development"],
     description: "Land and property dealing group with listings and inquiry system.",
-    location: "Sri Lanka"
+    location: "Canada"
   },
   {
     id: 8,
@@ -69,7 +69,7 @@ export const portfolioItems = [
     category: "Religious / Non-profit",
     tags: ["Web Design", "Development"],
     description: "Temple website with event management and devotee engagement.",
-    location: "Australia"
+    location: "United Kingdom"
   },
   {
     id: 9,
@@ -78,7 +78,7 @@ export const portfolioItems = [
     category: "Entertainment",
     tags: ["Web Design", "Development"],
     description: "Entertainment company platform with events, artists, and booking.",
-    location: "Global"
+    location: "Canada"
   },
   {
     id: 10,
@@ -87,7 +87,7 @@ export const portfolioItems = [
     category: "Sports & Community",
     tags: ["Web Design", "Development"],
     description: "Community sports association with membership and events portal.",
-    location: "Global"
+    location: "Canada"
   },
   {
     id: 11,
@@ -104,16 +104,16 @@ export const portfolioItems = [
     url: "https://sitpi.academy/",
     category: "Education",
     tags: ["Web Design", "Development"],
-    description: "Professional training academy with courses and enrolment system.",
-    location: "Sri Lanka"
+    description: "Professional Tamil training academy with courses and enrolment system.",
+    location: "Canada"
   },
   {
     id: 13,
     title: "Oorkuruvi",
     url: "https://mattakalappu.com/oorkuruvi/",
     category: "Media",
-    tags: ["Web Design", "Development"],
-    description: "Local media and news platform for regional digital journalism.",
+    tags: ["Web Design", "Sports & Community"],
+    description: "Local tourism platform for encoraging eco friendly tours.",
     location: "Sri Lanka"
   },
   {
@@ -127,12 +127,12 @@ export const portfolioItems = [
   },
   {
     id: 15,
-    title: "Blaze IT",
+    title: "Blaze ITM",
     url: "https://blazeitm.com/",
     category: "Technology",
-    tags: ["Web Design", "Development"],
+    tags: ["Sports & Community", "Development"],
     description: "Tech company digital presence with services and product showcase.",
-    location: "Global"
+    location: "Canada"
   },
   {
     id: 16,
@@ -168,7 +168,7 @@ export const portfolioItems = [
     category: "Jewellery & Luxury",
     tags: ["Web Design", "E-Commerce"],
     description: "Luxury jewellery brand with stunning product presentation and e-commerce.",
-    location: "Global"
+    location: "Netherlands"
   },
   {
     id: 20,
@@ -186,7 +186,7 @@ export const portfolioItems = [
     category: "MedTech / AI",
     tags: ["Web Design", "Development"],
     description: "AI-powered ophthalmic diagnostics platform with clinical positioning.",
-    location: "Global"
+    location: "Canada"
   },
   {
     id: 22,
