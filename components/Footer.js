@@ -67,7 +67,7 @@ export default function Footer() {
         </div>
 
         <div className="footer__bottom">
-          <p>&copy; {new Date().getFullYear()} Techo Labs (Pvt) Ltd. All rights reserved.</p>
+          <p>&copy; 2021 - {new Date().getFullYear()} Techo Labs (Pvt) Ltd. All rights reserved.</p>
           <div className="footer__bottom-brand">TECHO TRADERS ECOSYSTEM</div>
         </div>
       </div>
