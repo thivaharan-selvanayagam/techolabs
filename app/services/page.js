@@ -1,11 +1,11 @@
 import Link from 'next/link'
-import { services, optimizationPillars, faqs, siteConfig } from '../../data/index'
+import { services, optimizationPillars, servicesFaqs, siteConfig } from '../../data/index'
 import { getBreadcrumbSchema, getServicesSchema, getFaqSchema } from '../../lib/schema'
 
 export const metadata = {
   title: 'Services — Next.js Web Engineering, AI Search (SEO/AEO/GEO) & Market Research',
   description:
-    'Explore Techo Labs’ three integrated services: Sub-Second Next.js Web Engineering, Omnichannel Growth & AI Search (SEO, AEO, GEO, AIO, SXO), and Strategic Market Intelligence.',
+    'Explore Techo Labs services: sub-second Next.js web engineering, SEO/AEO/GEO/SXO growth marketing, and strategic market research with clear ROI.',
   alternates: {
     canonical: '/services',
   },
@@ -20,10 +20,10 @@ export const metadata = {
 export default function ServicesPage() {
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: 'Home', url: '/' },
-    { name: 'Services', url: '/services' },
+    { name: 'Capabilities', url: '/services' },
   ])
   const servicesSchema = getServicesSchema()
-  const faqSchema = getFaqSchema(faqs.slice(0, 4))
+  const faqSchema = getFaqSchema(servicesFaqs)
 
   return (
     <>
@@ -47,7 +47,7 @@ export default function ServicesPage() {
           <nav className="breadcrumb" aria-label="Breadcrumb">
             <Link href="/">Home</Link>
             <span>/</span>
-            <span aria-current="page">Services</span>
+            <span aria-current="page">Capabilities</span>
           </nav>
 
           <h1 className="inner-hero__title">
@@ -56,12 +56,8 @@ export default function ServicesPage() {
           </h1>
 
           <p className="inner-hero__lead">
-            Whether you need a lightning-fast Next.js platform, organic &amp; AI search dominance, or pre-launch market intelligence, every engagement is built on senior engineering and transparent metrics.
+            Techo Labs provides three integrated digital services for ambitious global organisations: Next-Gen Web and Product Engineering (delivered in two to eight weeks), Omnichannel Growth and AI Search Optimization across SEO, AEO, GEO, AIO, and SXO (executed in 90-day sprints), and Strategic Market Intelligence (delivered in two to four weeks). Every engagement combines server-first Next.js speed, structured entity schemas, and transparent attribution to drive measurable pipeline and revenue.
           </p>
-
-          <div className="direct-answer">
-            <strong>Quick Overview:</strong> Techo Labs delivers <strong>(01) Next-Gen Web Engineering</strong> in 2–8 weeks, <strong>(02) Omnichannel Growth &amp; AI Search (SEO, AEO, GEO, AIO, SXO + Paid Ads)</strong> via 90-day growth sprints, and <strong>(03) Strategic Market Research</strong> in 2–4 weeks for clients across 8+ countries.
-          </div>
 
           <div className="filter-pills" style={{ marginTop: '1.75rem' }}>
             {services.map((s) => (
@@ -69,6 +65,9 @@ export default function ServicesPage() {
                 {s.number} · {s.shortTitle}
               </a>
             ))}
+            <a href="#comparison-matrix" className="filter-pill">
+              Scope &amp; Timeline Matrix
+            </a>
             <a href="#search-architecture" className="filter-pill">
               SEO · AEO · GEO · AIO · SXO
             </a>
@@ -99,7 +98,7 @@ export default function ServicesPage() {
                       color: service.accent,
                     }}
                   >
-                    PILLAR {service.number}
+                    ENGINE {service.number}
                   </span>
                   <span className="mono" style={{ fontSize: '0.75rem', color: 'var(--muted)' }}>
                     Typical Delivery: {service.timeline}
@@ -113,7 +112,7 @@ export default function ServicesPage() {
                 >
                   {service.title}
                 </h2>
-                <p
+                <div
                   style={{
                     fontWeight: 700,
                     color: service.accent,
@@ -122,7 +121,7 @@ export default function ServicesPage() {
                   }}
                 >
                   {service.subtitle}
-                </p>
+                </div>
 
                 {service.description.map((paragraph, pIdx) => (
                   <p
@@ -269,6 +268,45 @@ export default function ServicesPage() {
         </section>
       ))}
 
+      {/* SERVICE SCOPE & TIMELINE MATRIX TABLE */}
+      <section id="comparison-matrix" className="section section--subtle" aria-labelledby="scope-table-heading">
+        <div className="container">
+          <div style={{ maxWidth: '680px', marginBottom: '2.5rem' }}>
+            <div className="eyebrow" style={{ marginBottom: '0.9rem' }}>
+              Executive Comparison
+            </div>
+            <h2 id="scope-table-heading" className="section-heading reveal">
+              Service Scope &amp; <em>Delivery Matrix</em>
+            </h2>
+          </div>
+
+          <div className="comparison-wrap reveal">
+            <table className="comparison-table">
+              <thead>
+                <tr>
+                  <th scope="col">Service Engine</th>
+                  <th scope="col">Delivery Cadence</th>
+                  <th scope="col">Core Architecture &amp; Channels</th>
+                  <th scope="col" className="col-techo">
+                    Primary Handover &amp; Outcome
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {services.map((s) => (
+                  <tr key={s.id}>
+                    <td className="col-dim">{s.title}</td>
+                    <td>{s.timeline}</td>
+                    <td className="col-legacy">{s.subtitle}</td>
+                    <td className="col-techo">{s.deliverables}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
       {/* 5-PILLAR SEARCH & AI MATRIX */}
       <section id="search-architecture" className="section section--dark" aria-labelledby="matrix-heading">
         <div className="container">
@@ -282,7 +320,7 @@ export default function ServicesPage() {
               <em>Across Every Engagement.</em>
             </h2>
             <p style={{ marginTop: '1rem', color: 'rgba(255,255,255,0.72)', fontSize: '0.98rem', lineHeight: 1.75 }}>
-              We don’t treat optimization as an expensive post-launch add-on. Every platform and growth sprint we execute aligns technical speed, human UX, and machine-readable authority.
+              We don’t treat optimization as an expensive post-launch add-on. Every platform and growth sprint aligns technical speed, human UX, and machine-readable authority.
             </p>
           </div>
 
@@ -301,8 +339,38 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* SERVICES FAQ */}
+      <section className="section" aria-labelledby="services-faq-heading">
+        <div className="container">
+          <div style={{ textAlign: 'center', maxWidth: '640px', margin: '0 auto 3rem' }}>
+            <div className="eyebrow" style={{ marginBottom: '0.9rem' }}>
+              Service Clarity
+            </div>
+            <h2 id="services-faq-heading" className="section-heading reveal">
+              Frequently Asked <em>Questions</em>
+            </h2>
+          </div>
+
+          <div className="faq-stack">
+            {servicesFaqs.map((item, idx) => (
+              <details key={item.question} className="faq-item" open={idx === 0}>
+                <summary className="faq-summary">
+                  <span>{item.question}</span>
+                  <span className="faq-chevron" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.2">
+                      <path d="M4 6l4 4 4-4" />
+                    </svg>
+                  </span>
+                </summary>
+                <div className="faq-answer">{item.answer}</div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="section">
+      <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
           <div className="cta-banner">
             <div className="cta-banner__content">

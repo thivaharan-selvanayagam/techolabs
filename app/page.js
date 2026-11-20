@@ -27,6 +27,14 @@ const MARQUEE_ITEMS = [
   'A Division of Techo Traders (Pvt) Ltd',
 ]
 
+export const metadata = {
+  description:
+    'Techo Labs engineers sub-second Next.js websites, SEO/AEO/GEO search growth, and market intelligence across 8+ countries for ambitious global brands.',
+  alternates: {
+    canonical: '/',
+  },
+}
+
 export default function HomePage() {
   const servicesSchema = getServicesSchema()
   const faqSchema = getFaqSchema(faqs)
@@ -62,8 +70,7 @@ export default function HomePage() {
               </h1>
 
               <p className="hero-lead">
-                Outdated websites lose buyers before the first scroll. Techo Labs designs ultra-fast Next.js platforms, engineers{' '}
-                <strong style={{ color: 'var(--ink)' }}>SEO · AEO · GEO · AIO · SXO</strong> discovery, and backs every decision with market intelligence across 8+ countries.
+                Techo Labs is the digital engineering, AI search optimization, and market intelligence division of Techo Traders (Pvt) Ltd, headquartered in Batticaloa, Sri Lanka and serving clients across eight countries. Since 2021, our senior team has shipped more than 24 production Next.js websites, SaaS applications, and e-commerce platforms engineered for sub-second load speeds, 98% client retention, and compounding visibility across Google, Bing, ChatGPT, Perplexity, and AI Overviews.
               </p>
 
               <div className="hero-cta-row">
@@ -704,7 +711,7 @@ export default function HomePage() {
               Direct Answers
             </div>
             <h2 id="faq-heading" className="section-heading reveal">
-              Executive <em>FAQ</em>
+              Frequently Asked <em>Questions</em>
             </h2>
           </div>
 

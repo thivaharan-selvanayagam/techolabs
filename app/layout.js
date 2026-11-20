@@ -18,7 +18,7 @@ export const metadata = {
     template: '%s | Techo Labs',
   },
   description:
-    'Techo Labs builds sub-second Next.js web platforms, executes unified SEO, AEO, GEO, AIO & SXO digital growth, and delivers strategic market intelligence across 8+ countries. A division of Techo Traders (Pvt) Ltd.',
+    'Techo Labs engineers sub-second Next.js websites, SEO/AEO/GEO search growth, and market intelligence across 8+ countries for ambitious global brands.',
   keywords: [
     'Techo Labs',
     'Techo Traders',

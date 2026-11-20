@@ -739,3 +739,72 @@ export const faqs = [
       'Absolutely. Most partners transition from an initial Flagship Platform Sprint into either our 90-Day Search & AI Growth Retainer or an Embedded Digital Intelligence Pod covering continuous feature shipping, Core Web Vitals monitoring, and campaign optimisation.',
   },
 ]
+
+export const servicesFaqs = [
+  {
+    question: 'Should we choose custom Next.js engineering or a headless CMS?',
+    answer:
+      'We combine both when needed. Next.js provides sub-second server-rendered performance and full UI control, while a headless CMS such as Sanity, Strapi, or WordPress lets your marketing team publish pages and articles effortlessly without touching code.',
+  },
+  {
+    question: 'What is included in your SEO, AEO, GEO, AIO, and SXO growth sprints?',
+    answer:
+      'Each 90-day sprint covers technical Core Web Vitals tuning, semantic HTML and JSON-LD entity schemas, answer-first content blocks, comparison matrices for ChatGPT and Perplexity citations, llms.txt indexing, and ongoing conversion rate experiments.',
+  },
+  {
+    question: 'Can we start with Market Intelligence before committing to a full web build?',
+    answer:
+      'Yes. Many founders and executives begin with a 2-to-4-week Market & Competitive Intelligence sprint to validate demand, dissect competitors, and lock in positioning before investing in full-scale engineering or paid media.',
+  },
+  {
+    question: 'How do you measure ROI across web engineering and digital marketing?',
+    answer:
+      'Every project ships with GA4, Google Tag Manager, Search Console, and pipeline conversion tracking so leadership can trace load-time gains, search rankings, AI referrals, and ad spend directly to qualified leads and revenue.',
+  },
+]
+
+export const portfolioFaqs = [
+  {
+    question: 'Are all 24 platforms in the Techo Labs showcase live in production?',
+    answer:
+      'Yes. Every entry in our directory links directly to an active production website or web application engineered for clients across Canada, the Netherlands, the United Kingdom, France, the UAE, and Sri Lanka.',
+  },
+  {
+    question: 'Which industries does Techo Labs have proven production experience in?',
+    answer:
+      'Our live deployments span 15+ sectors including clinical MedTech and AI diagnostics, IoT SaaS, residential and commercial real estate, fine jewellery luxury e-commerce, enterprise IT, legal and immigration advisory, hospitality, telecom hardware, and express courier logistics.',
+  },
+  {
+    question: 'What software has Techo Labs built for the Techo Traders (Pvt) Ltd group?',
+    answer:
+      'Beyond external client work, Techo Labs engineered the corporate group hub for Techo Traders (Pvt) Ltd, the B2B hardware showcase for Techo Connect, and the custom parcel tracking and booking software powering Techo Xpress.',
+  },
+  {
+    question: 'Do you take on confidential or white-label engineering projects under NDA?',
+    answer:
+      'Yes. In addition to our 24 public showcase launches, we partner with international agencies and funded startups under strict non-disclosure agreements for proprietary web applications and research studies.',
+  },
+]
+
+export const aboutFaqs = [
+  {
+    question: 'What is the legal relationship between Techo Labs and Techo Traders (Pvt) Ltd?',
+    answer:
+      'Techo Traders (Pvt) Ltd is the incorporated parent company. Techo Labs operates as its dedicated digital engineering, AI search growth, and market intelligence division alongside sister divisions Techo Connect and Techo Xpress.',
+  },
+  {
+    question: 'Where is the Techo Labs team located and how do you collaborate globally?',
+    answer:
+      'Our engineering and research base is in Batticaloa, Sri Lanka. Over 75% of our projects serve clients across North America, Europe, and the Middle East via structured Slack channels, video sprints, live staging previews, and a 4-hour response SLA.',
+  },
+  {
+    question: 'Why does Techo Labs combine engineering, search marketing, and research in one team?',
+    answer:
+      'When design, code, SEO/GEO, and market research are split across disconnected vendors, speed and positioning suffer. Uniting all three disciplines under one roof ensures every platform launches fast, ranks across search and AI engines, and converts buyers.',
+  },
+  {
+    question: 'How long do clients typically stay partnered with Techo Labs?',
+    answer:
+      'We maintain a 98% client satisfaction and retention rate, with many international partners working with us across multiple product launches, regional expansions, and multi-year growth retainers since 2021.',
+  },
+]

@@ -6,7 +6,7 @@ import { getBreadcrumbSchema, getFaqSchema } from '../../lib/schema'
 export const metadata = {
   title: 'Contact — Start a Project or Book a Free Strategy Call',
   description:
-    'Contact Techo Labs for Next.js web engineering, SEO/AEO/GEO/AIO/SXO digital marketing, and market intelligence. 4-hour response SLA via email or WhatsApp (+94 76 665 6007).',
+    'Start your project with Techo Labs. Get a senior Next.js, SEO/GEO, or market research proposal with a 4-hour response SLA via email or WhatsApp.',
   alternates: {
     canonical: '/contact',
   },
@@ -17,6 +17,29 @@ export const metadata = {
     url: `${siteConfig.url}/contact`,
   },
 }
+
+const onboardingSlaRows = [
+  {
+    stage: '01 · Brief Acknowledgment',
+    sla: 'Under 4 Business Hours',
+    deliverable: 'Senior engineer or strategist reviews your goals and confirms discovery slot.',
+  },
+  {
+    stage: '02 · Discovery & Audit Call',
+    sla: 'Within 24 Hours',
+    deliverable: '30-minute technical, UX, and search opportunity diagnostic with zero sales fluff.',
+  },
+  {
+    stage: '03 · Architecture & Proposal',
+    sla: 'Within 48 Hours',
+    deliverable: 'Written scope, milestone schedule, fixed investment options, and KPI targets.',
+  },
+  {
+    stage: '04 · Sprint Kickoff',
+    sla: 'Day 5 from Approval',
+    deliverable: 'Dedicated workspace, staging environment, and weekly live build previews.',
+  },
+]
 
 export default function ContactPage() {
   const breadcrumbSchema = getBreadcrumbSchema([
@@ -52,20 +75,8 @@ export default function ContactPage() {
           </h1>
 
           <p className="inner-hero__lead">
-            Whether you have a full specification or an early concept — speak directly with our senior engineering and growth desk. No hard sell, ever.
+            Connect directly with Techo Labs to scope a Next.js web platform, an SEO, AEO, and GEO search growth campaign, or a market intelligence study. Our senior engineering and strategy desk operates Monday through Saturday from Batticaloa, Sri Lanka for clients across North America, Europe, the Middle East, and Asia-Pacific, guaranteeing an initial response within four business hours and a written roadmap proposal within 48 hours.
           </p>
-
-          <div className="direct-answer">
-            <strong>Direct Desk:</strong> Email{' '}
-            <a href={`mailto:${siteConfig.email}`} style={{ color: 'var(--blue)', fontWeight: 700 }}>
-              {siteConfig.email}
-            </a>{' '}
-            or call/WhatsApp{' '}
-            <a href={`tel:${siteConfig.phoneRaw}`} style={{ color: 'var(--blue)', fontWeight: 700 }}>
-              {siteConfig.phone}
-            </a>{' '}
-            ({siteConfig.location.hours}). Average response time: <strong>under 4 business hours</strong>.
-          </div>
         </div>
       </section>
 
@@ -79,55 +90,59 @@ export default function ContactPage() {
                 Direct Global Channels
               </h2>
               <p style={{ fontSize: '0.92rem', color: 'var(--muted)', lineHeight: 1.75, marginBottom: '1.5rem' }}>
-                Headquartered in Batticaloa, Sri Lanka as the digital division of Techo Traders (Pvt) Ltd — collaborating seamlessly across North American, European, UK, MENA, and Asia-Pacific time zones.
+                Headquartered in Batticaloa, Sri Lanka as the digital division of Techo Traders (Pvt) Ltd — collaborating seamlessly across global time zones.
               </p>
 
-              <div className="contact-card-stack">
-                <a
-                  href={siteConfig.whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="contact-channel-card"
-                >
-                  <div className="contact-channel-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="mono" style={{ fontSize: '0.68rem', fontWeight: 700, color: 'var(--blue)', textTransform: 'uppercase' }}>
-                      Phone &amp; Instant WhatsApp ↗
+              <ul className="contact-card-stack">
+                <li>
+                  <a
+                    href={siteConfig.whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="contact-channel-card"
+                  >
+                    <div className="contact-channel-icon">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
+                      </svg>
                     </div>
-                    <div style={{ fontWeight: 800, color: 'var(--ink)', fontSize: '1rem', marginTop: '2px' }}>
-                      {siteConfig.phone}
+                    <div>
+                      <div className="mono" style={{ fontSize: '0.68rem', fontWeight: 700, color: 'var(--blue)', textTransform: 'uppercase' }}>
+                        Phone &amp; Instant WhatsApp ↗
+                      </div>
+                      <div style={{ fontWeight: 800, color: 'var(--ink)', fontSize: '1rem', marginTop: '2px' }}>
+                        {siteConfig.phone}
+                      </div>
+                      <div style={{ fontSize: '0.8rem', color: 'var(--muted)' }}>
+                        {siteConfig.location.hours}
+                      </div>
                     </div>
-                    <div style={{ fontSize: '0.8rem', color: 'var(--muted)' }}>
-                      {siteConfig.location.hours}
-                    </div>
-                  </div>
-                </a>
+                  </a>
+                </li>
 
-                <a href={`mailto:${siteConfig.email}`} className="contact-channel-card">
-                  <div className="contact-channel-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                      <polyline points="22,6 12,13 2,6" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="mono" style={{ fontSize: '0.68rem', fontWeight: 700, color: 'var(--blue)', textTransform: 'uppercase' }}>
-                      Project &amp; RFP Desk
+                <li>
+                  <a href={`mailto:${siteConfig.email}`} className="contact-channel-card">
+                    <div className="contact-channel-icon">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                      </svg>
                     </div>
-                    <div style={{ fontWeight: 800, color: 'var(--ink)', fontSize: '1rem', marginTop: '2px' }}>
-                      {siteConfig.email}
+                    <div>
+                      <div className="mono" style={{ fontSize: '0.68rem', fontWeight: 700, color: 'var(--blue)', textTransform: 'uppercase' }}>
+                        Project &amp; RFP Desk
+                      </div>
+                      <div style={{ fontWeight: 800, color: 'var(--ink)', fontSize: '1rem', marginTop: '2px' }}>
+                        {siteConfig.email}
+                      </div>
+                      <div style={{ fontSize: '0.8rem', color: 'var(--muted)' }}>
+                        Written proposal within 48 hours of discovery
+                      </div>
                     </div>
-                    <div style={{ fontSize: '0.8rem', color: 'var(--muted)' }}>
-                      Written proposal within 48 hours of discovery
-                    </div>
-                  </div>
-                </a>
+                  </a>
+                </li>
 
-                <div className="contact-channel-card">
+                <li className="contact-channel-card">
                   <div className="contact-channel-icon">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
@@ -145,8 +160,8 @@ export default function ContactPage() {
                       Serving clients across 8+ countries worldwide
                     </div>
                   </div>
-                </div>
-              </div>
+                </li>
+              </ul>
 
               {/* Techo Group Directory */}
               <div
@@ -158,7 +173,7 @@ export default function ContactPage() {
                   border: '1px solid var(--blue-border)',
                 }}
               >
-                <div
+                <h3
                   className="mono"
                   style={{
                     fontSize: '0.68rem',
@@ -170,36 +185,37 @@ export default function ContactPage() {
                   }}
                 >
                   Techo Traders (Pvt) Ltd &amp; Sister Divisions
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                </h3>
+                <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                   {sisterEcosystemLinks.map((eco) => (
-                    <a
-                      key={eco.id}
-                      href={eco.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                        padding: '0.65rem 0.85rem',
-                        borderRadius: 'var(--r-sm)',
-                        background: 'var(--bg-subtle)',
-                        border: '1px solid var(--border)',
-                      }}
-                    >
-                      <div>
-                        <div style={{ fontWeight: 700, fontSize: '0.88rem', color: 'var(--ink)' }}>
-                          {eco.name}
+                    <li key={eco.id}>
+                      <a
+                        href={eco.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'space-between',
+                          padding: '0.65rem 0.85rem',
+                          borderRadius: 'var(--r-sm)',
+                          background: 'var(--bg-subtle)',
+                          border: '1px solid var(--border)',
+                        }}
+                      >
+                        <div>
+                          <div style={{ fontWeight: 700, fontSize: '0.88rem', color: 'var(--ink)' }}>
+                            {eco.name}
+                          </div>
+                          <div style={{ fontSize: '0.75rem', color: 'var(--muted)' }}>{eco.badge}</div>
                         </div>
-                        <div style={{ fontSize: '0.75rem', color: 'var(--muted)' }}>{eco.badge}</div>
-                      </div>
-                      <span className="mono" style={{ fontSize: '0.72rem', color: 'var(--blue)', fontWeight: 700 }}>
-                        {eco.domain} ↗
-                      </span>
-                    </a>
+                        <span className="mono" style={{ fontSize: '0.72rem', color: 'var(--blue)', fontWeight: 700 }}>
+                          {eco.domain} ↗
+                        </span>
+                      </a>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             </div>
 
@@ -209,15 +225,52 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* RESPONSE SLA & ONBOARDING SCHEDULE TABLE */}
+      <section className="section" aria-labelledby="sla-heading">
+        <div className="container">
+          <div style={{ maxWidth: '680px', marginBottom: '2.5rem' }}>
+            <div className="eyebrow" style={{ marginBottom: '0.85rem' }}>
+              What Happens Next
+            </div>
+            <h2 id="sla-heading" className="section-heading reveal">
+              Response SLA &amp; <em>Onboarding Schedule</em>
+            </h2>
+          </div>
+
+          <div className="comparison-wrap reveal">
+            <table className="comparison-table">
+              <thead>
+                <tr>
+                  <th scope="col">Onboarding Stage</th>
+                  <th scope="col">Guaranteed Turnaround</th>
+                  <th scope="col" className="col-techo">
+                    Client Deliverable
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {onboardingSlaRows.map((row) => (
+                  <tr key={row.stage}>
+                    <td className="col-dim">{row.stage}</td>
+                    <td>{row.sla}</td>
+                    <td className="col-techo">{row.deliverable}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
-      <section className="section" aria-labelledby="contact-faq-heading">
+      <section className="section section--subtle" aria-labelledby="contact-faq-heading">
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '640px', margin: '0 auto 3rem' }}>
             <div className="eyebrow" style={{ marginBottom: '0.9rem' }}>
               Before You Reach Out
             </div>
             <h2 id="contact-faq-heading" className="section-heading">
-              Common <em>Questions</em>
+              Frequently Asked <em>Questions</em>
             </h2>
           </div>
 

@@ -1,12 +1,12 @@
 import Link from 'next/link'
 import PortfolioShowcase from '../../components/PortfolioShowcase'
-import { portfolioItems, sisterEcosystemLinks, siteConfig } from '../../data/index'
-import { getBreadcrumbSchema, getPortfolioSchema } from '../../lib/schema'
+import { portfolioItems, sisterEcosystemLinks, portfolioFaqs, siteConfig } from '../../data/index'
+import { getBreadcrumbSchema, getPortfolioSchema, getFaqSchema } from '../../lib/schema'
 
 export const metadata = {
   title: 'Work & Case Index — 24+ Global Web, SaaS & Commerce Platforms',
   description:
-    'Explore 24+ live production platforms engineered by Techo Labs across Canada, the Netherlands, the UK, France, the UAE, and Sri Lanka — switch between our Asymmetric Bento Stage and Interactive Studio Ledger.',
+    'Browse 24+ live websites, AI MedTech, SaaS, and e-commerce platforms engineered by Techo Labs across Canada, Europe, the UK, the UAE, and Sri Lanka.',
   alternates: {
     canonical: '/portfolio',
   },
@@ -18,15 +18,34 @@ export const metadata = {
   },
 }
 
-export default function PortfolioPage() {
-  const countriesCount = new Set(portfolioItems.map((p) => p.location)).size
-  const industriesCount = new Set(portfolioItems.map((p) => p.category)).size
+const regionalSummary = [
+  {
+    region: 'North America (Canada)',
+    count: '12 Platforms',
+    sectors: 'MedTech AI, IoT SaaS, Real Estate, Immigration Law, Corporate, EdTech & Entertainment',
+    highlights: 'Ophtascan, WeTrAQ, Palmyra Homes, Koenig Developments, Libertas Immigration',
+  },
+  {
+    region: 'Europe & UK (NL · UK · FR)',
+    count: '6 Platforms',
+    sectors: 'Fine Jewellery E-Commerce, Managed Enterprise IT, Tax & Finance, HR Wellness, Gastronomy & Non-Profit',
+    highlights: 'Tirisi, Vooruit, FF Administraties, Energy at the Office, Le Roi Indien, Highgate Hill Murugan',
+  },
+  {
+    region: 'South Asia & Middle East (LK · UAE)',
+    count: '6 Platforms',
+    sectors: 'Corporate Conglomerate, Telecom Hardware, Express Logistics, Digital Agency, Eco-Tourism & Heritage',
+    highlights: 'Techo Traders, Techo Connect, Techo Xpress, Shamal Digitals, Mattakalappu, Oorkuruvi',
+  },
+]
 
+export default function PortfolioPage() {
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Work', url: '/portfolio' },
   ])
   const portfolioSchema = getPortfolioSchema()
+  const faqSchema = getFaqSchema(portfolioFaqs)
 
   return (
     <>
@@ -37,6 +56,10 @@ export default function PortfolioPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(portfolioSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
       {/* INNER HERO */}
@@ -55,26 +78,68 @@ export default function PortfolioPage() {
           </h1>
 
           <p className="inner-hero__lead">
-            Every project in our showcase is a live production deployment — from Canadian AI diagnostics and IoT SaaS platforms to Dutch fine jewellery houses and the Techo Traders (Pvt) Ltd group platforms.
+            Techo Labs has engineered and launched 24 live production websites, SaaS products, and digital commerce platforms for clients across Canada, the Netherlands, the United Kingdom, France, the United Arab Emirates, and Sri Lanka. Spanning clinical AI diagnostics, fine luxury jewellery, enterprise IT, property development, and the Techo Traders (Pvt) Ltd ecosystem, every build pairs bespoke 2027 interface craft with sub-second Core Web Vitals performance and search authority.
           </p>
-
-          <div className="direct-answer">
-            <strong>Interactive Case Stage:</strong> Explore <strong>{portfolioItems.length} verified builds</strong> spanning{' '}
-            <strong>{countriesCount}+ countries</strong> and <strong>{industriesCount} sectors</strong>. Switch between the{' '}
-            <strong>Bento Stage</strong> and the high-density <strong>Index Ledger</strong> below, or filter by region and sector.
-          </div>
         </div>
       </section>
 
       {/* DUAL-MODE PORTFOLIO STAGE (BENTO + INDEX LEDGER) */}
-      <section className="section section--subtle" aria-label="Portfolio Showcase">
+      <section className="section section--subtle" aria-labelledby="case-directory-heading">
         <div className="container">
+          <div style={{ marginBottom: '2rem' }}>
+            <div className="eyebrow" style={{ marginBottom: '0.75rem' }}>
+              Interactive Directory
+            </div>
+            <h2 id="case-directory-heading" className="section-heading">
+              Verified Global <em>Deployments</em>
+            </h2>
+          </div>
+
           <PortfolioShowcase />
         </div>
       </section>
 
-      {/* TECHO GROUP PLATFORMS */}
-      <section className="section" aria-labelledby="eco-platforms-heading">
+      {/* GLOBAL DEPLOYMENT BREAKDOWN TABLE */}
+      <section className="section" aria-labelledby="regional-breakdown-heading">
+        <div className="container">
+          <div style={{ maxWidth: '680px', marginBottom: '2.5rem' }}>
+            <div className="eyebrow" style={{ marginBottom: '0.85rem' }}>
+              Global Footprint
+            </div>
+            <h2 id="regional-breakdown-heading" className="section-heading reveal">
+              Deployments by <em>Region &amp; Sector</em>
+            </h2>
+          </div>
+
+          <div className="comparison-wrap reveal">
+            <table className="comparison-table">
+              <thead>
+                <tr>
+                  <th scope="col">Geographic Market</th>
+                  <th scope="col">Volume</th>
+                  <th scope="col">Industries Served</th>
+                  <th scope="col" className="col-techo">
+                    Selected Live Platforms
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {regionalSummary.map((row) => (
+                  <tr key={row.region}>
+                    <td className="col-dim">{row.region}</td>
+                    <td>{row.count}</td>
+                    <td className="col-legacy">{row.sectors}</td>
+                    <td className="col-techo">{row.highlights}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* TECHO GROUP PLATFORMS (SEMANTIC LIST) */}
+      <section className="section section--subtle" aria-labelledby="eco-platforms-heading">
         <div className="container">
           <div className="section-header-split" style={{ marginBottom: '2.25rem' }}>
             <div>
@@ -90,37 +155,69 @@ export default function PortfolioPage() {
             </p>
           </div>
 
-          <div className="services-bento">
+          <ul className="services-bento">
             {sisterEcosystemLinks.map((eco) => (
-              <a
-                key={eco.id}
-                href={eco.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bento-service-card reveal"
-              >
-                <div>
-                  <div className="bento-service-top">
-                    <span
-                      className="eco-node-badge"
-                      style={{
-                        background: `${eco.accent}14`,
-                        color: eco.accent,
-                        border: `1px solid ${eco.accent}30`,
-                      }}
-                    >
-                      {eco.badge}
-                    </span>
-                    <span style={{ color: 'var(--blue)', fontWeight: 700, fontSize: '0.85rem' }}>↗</span>
+              <li key={eco.id} style={{ display: 'flex' }}>
+                <a
+                  href={eco.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bento-service-card reveal"
+                  style={{ width: '100%' }}
+                >
+                  <div>
+                    <div className="bento-service-top">
+                      <span
+                        className="eco-node-badge"
+                        style={{
+                          background: `${eco.accent}14`,
+                          color: eco.accent,
+                          border: `1px solid ${eco.accent}30`,
+                        }}
+                      >
+                        {eco.badge}
+                      </span>
+                      <span style={{ color: 'var(--blue)', fontWeight: 700, fontSize: '0.85rem' }}>↗</span>
+                    </div>
+                    <h3 className="bento-service-title">{eco.name}</h3>
+                    <p className="bento-service-desc">{eco.description}</p>
                   </div>
-                  <h3 className="bento-service-title">{eco.name}</h3>
-                  <p className="bento-service-desc">{eco.description}</p>
-                </div>
-                <div className="eco-node-foot">
-                  <span>{eco.domain}</span>
-                  <span>Visit {eco.shortName} ↗</span>
-                </div>
-              </a>
+                  <div className="eco-node-foot">
+                    <span>{eco.domain}</span>
+                    <span>Visit {eco.shortName} ↗</span>
+                  </div>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* PORTFOLIO FAQ */}
+      <section className="section" aria-labelledby="portfolio-faq-heading">
+        <div className="container">
+          <div style={{ textAlign: 'center', maxWidth: '640px', margin: '0 auto 3rem' }}>
+            <div className="eyebrow" style={{ marginBottom: '0.9rem' }}>
+              Case &amp; Delivery Answers
+            </div>
+            <h2 id="portfolio-faq-heading" className="section-heading reveal">
+              Frequently Asked <em>Questions</em>
+            </h2>
+          </div>
+
+          <div className="faq-stack">
+            {portfolioFaqs.map((item, idx) => (
+              <details key={item.question} className="faq-item" open={idx === 0}>
+                <summary className="faq-summary">
+                  <span>{item.question}</span>
+                  <span className="faq-chevron" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.2">
+                      <path d="M4 6l4 4 4-4" />
+                    </svg>
+                  </span>
+                </summary>
+                <div className="faq-answer">{item.answer}</div>
+              </details>
             ))}
           </div>
         </div>

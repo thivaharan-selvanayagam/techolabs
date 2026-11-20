@@ -1,11 +1,11 @@
 import Link from 'next/link'
-import { siteConfig, stats, ecosystemLinks } from '../../data/index'
-import { getBreadcrumbSchema } from '../../lib/schema'
+import { siteConfig, stats, ecosystemLinks, aboutFaqs } from '../../data/index'
+import { getBreadcrumbSchema, getFaqSchema } from '../../lib/schema'
 
 export const metadata = {
   title: 'About Techo Labs — Digital Intelligence Division of Techo Traders (Pvt) Ltd',
   description:
-    'Established in 2021 in Batticaloa, Sri Lanka, Techo Labs is the digital engineering, AI search growth, and market intelligence division of Techo Traders (Pvt) Ltd — serving clients across 8+ countries.',
+    'Founded in 2021 under Techo Traders (Pvt) Ltd, Techo Labs is a global web engineering, AI search growth, and market intelligence studio in Sri Lanka.',
   alternates: {
     canonical: '/about',
   },
@@ -45,12 +45,17 @@ export default function AboutPage() {
     { name: 'Home', url: '/' },
     { name: 'Studio', url: '/about' },
   ])
+  const faqSchema = getFaqSchema(aboutFaqs)
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
       {/* INNER HERO */}
@@ -69,24 +74,8 @@ export default function AboutPage() {
           </h1>
 
           <p className="inner-hero__lead">
-            Headquartered in Batticaloa, Sri Lanka and trusted across North America, Europe, and the Middle East — Techo Labs engineers digital platforms, AI-era search visibility, and market intelligence as a precision craft.
+            Established in 2021 in Batticaloa, Sri Lanka, Techo Labs is the digital engineering, search growth, and market intelligence division of parent company Techo Traders (Pvt) Ltd. Operating alongside sister divisions Techo Connect and Techo Xpress, our multidisciplinary team has delivered 24+ live digital platforms across eight international markets, maintaining a 98% client retention rate through sub-second Next.js engineering, transparent communication, and research-backed commercial execution.
           </p>
-
-          <div className="direct-answer">
-            <strong>Corporate Structure:</strong> <strong>Techo Labs</strong> (established {siteConfig.foundedYear}) operates as the digital division of parent company{' '}
-            <a href={siteConfig.parentUrl} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--blue)', fontWeight: 700 }}>
-              Techo Traders (Pvt) Ltd ↗
-            </a>
-            , alongside sister divisions{' '}
-            <a href="https://www.connect.techotraders.com.lk/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--blue)', fontWeight: 700 }}>
-              Techo Connect ↗
-            </a>{' '}
-            (telecom &amp; antenna hardware) and{' '}
-            <a href="https://www.express.techotraders.com.lk/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--blue)', fontWeight: 700 }}>
-              Techo Xpress ↗
-            </a>{' '}
-            (courier &amp; smart logistics).
-          </div>
         </div>
       </section>
 
@@ -137,18 +126,18 @@ export default function AboutPage() {
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+              <ul style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 {stats.map((s) => (
-                  <div key={s.label} className="metric-tile">
+                  <li key={s.label} className="metric-tile">
                     <div className="metric-value">
                       {s.value}
                       <span className="accent">{s.suffix}</span>
                     </div>
                     <div className="metric-label">{s.label}</div>
                     <div className="metric-detail">{s.detail}</div>
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
 
               <div
                 style={{
@@ -194,7 +183,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* GROUP ECOSYSTEM */}
+      {/* GROUP CORPORATE STRUCTURE TABLE & CARDS */}
       <section className="section section--subtle" aria-labelledby="about-eco-heading">
         <div className="container">
           <div className="section-header-split">
@@ -207,6 +196,44 @@ export default function AboutPage() {
                 <em>Three Specialized Divisions.</em>
               </h2>
             </div>
+          </div>
+
+          <div className="comparison-wrap reveal" style={{ marginBottom: '2.25rem' }}>
+            <table className="comparison-table">
+              <thead>
+                <tr>
+                  <th scope="col">Entity / Division</th>
+                  <th scope="col">Corporate Role</th>
+                  <th scope="col">Primary Mandate</th>
+                  <th scope="col" className="col-techo">
+                    Official Web Property
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {ecosystemLinks.map((node) => (
+                  <tr key={node.id}>
+                    <td className="col-dim">{node.name}</td>
+                    <td>{node.badge}</td>
+                    <td className="col-legacy">{node.description}</td>
+                    <td className="col-techo">
+                      {node.isCurrent ? (
+                        <span>{node.domain} (Active)</span>
+                      ) : (
+                        <a
+                          href={node.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ color: 'var(--blue)' }}
+                        >
+                          {node.domain} ↗
+                        </a>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
 
           <div className="ecosystem-grid">
@@ -261,7 +288,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* TIMELINE */}
+      {/* TIMELINE (SEMANTIC ORDERED LIST) */}
       <section className="section" aria-labelledby="timeline-heading">
         <div className="container">
           <div style={{ marginBottom: '3rem' }}>
@@ -273,15 +300,15 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          <div className="timeline-list">
+          <ol className="timeline-list">
             {milestones.map((m) => (
-              <article key={m.year} className="timeline-card reveal">
+              <li key={m.year} className="timeline-card reveal">
                 <span className="process-num">{m.year}</span>
                 <h3 className="process-title">{m.title}</h3>
                 <p className="process-desc">{m.desc}</p>
-              </article>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
 
@@ -297,7 +324,7 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          <div className="process-steps-grid">
+          <ul className="process-steps-grid">
             {[
               {
                 code: '01',
@@ -320,7 +347,7 @@ export default function AboutPage() {
                 desc: 'Clean modular Next.js & CMS architectures that your team can scale effortlessly without costly rewrites.',
               },
             ].map((val) => (
-              <div
+              <li
                 key={val.code}
                 className="pillar-card reveal"
                 style={{ justifyContent: 'flex-start' }}
@@ -330,7 +357,37 @@ export default function AboutPage() {
                 <p className="pillar-summary" style={{ marginBottom: 0 }}>
                   {val.desc}
                 </p>
-              </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* STUDIO FAQ */}
+      <section className="section section--subtle" aria-labelledby="about-faq-heading">
+        <div className="container">
+          <div style={{ textAlign: 'center', maxWidth: '640px', margin: '0 auto 3rem' }}>
+            <div className="eyebrow" style={{ marginBottom: '0.9rem' }}>
+              Governance &amp; Delivery
+            </div>
+            <h2 id="about-faq-heading" className="section-heading reveal">
+              Frequently Asked <em>Questions</em>
+            </h2>
+          </div>
+
+          <div className="faq-stack">
+            {aboutFaqs.map((item, idx) => (
+              <details key={item.question} className="faq-item" open={idx === 0}>
+                <summary className="faq-summary">
+                  <span>{item.question}</span>
+                  <span className="faq-chevron" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.2">
+                      <path d="M4 6l4 4 4-4" />
+                    </svg>
+                  </span>
+                </summary>
+                <div className="faq-answer">{item.answer}</div>
+              </details>
             ))}
           </div>
         </div>
