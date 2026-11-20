@@ -135,6 +135,56 @@ export default function PortfolioPage() {
               </tbody>
             </table>
           </div>
+
+          <div
+            className="reveal"
+            style={{
+              marginTop: '2rem',
+              background: '#FFFFFF',
+              border: '1px solid var(--border)',
+              borderRadius: 'var(--r-lg)',
+              padding: '2rem',
+              boxShadow: 'var(--shadow-xs)',
+            }}
+          >
+            <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--ink)', marginBottom: '1rem' }}>
+              Production Engineering Standards Across Every Build
+            </h3>
+            <ul className="bento-feature-list" style={{ borderTop: 'none', paddingTop: 0, marginBottom: 0 }}>
+              <li className="bento-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>
+                  <strong>Sub-Second Core Web Vitals:</strong> Engineered for under 0.8s Largest Contentful Paint, zero layout shift, and global edge delivery.
+                </span>
+              </li>
+              <li className="bento-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>
+                  <strong>Unified SEO, AEO &amp; GEO Architecture:</strong> Semantic HTML5, JSON-LD entity graphs, and answer-first copy built for Google and AI engines.
+                </span>
+              </li>
+              <li className="bento-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>
+                  <strong>Responsive &amp; Accessible UX:</strong> Precision interfaces verified across mobile, tablet, and desktop viewports to WCAG 2.2 AA standards.
+                </span>
+              </li>
+              <li className="bento-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>
+                  <strong>Conversion-Focused Architecture:</strong> Research-backed user journeys, lead capture workflows, and full GA4 pipeline attribution.
+                </span>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 

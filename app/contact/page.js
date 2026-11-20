@@ -259,6 +259,55 @@ export default function ContactPage() {
               </tbody>
             </table>
           </div>
+
+          <div
+            className="reveal"
+            style={{
+              marginTop: '2rem',
+              background: 'var(--bg-subtle)',
+              border: '1px solid var(--border)',
+              borderRadius: 'var(--r-lg)',
+              padding: '2rem',
+            }}
+          >
+            <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--ink)', marginBottom: '1rem' }}>
+              What to Share for the Fastest Proposal
+            </h3>
+            <ul className="bento-feature-list" style={{ borderTop: 'none', paddingTop: 0, marginBottom: 0 }}>
+              <li className="bento-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>
+                  <strong>Primary Commercial Goal:</strong> Whether launching a new platform, redesigning an outdated site, or scaling SEO, AEO, and GEO visibility.
+                </span>
+              </li>
+              <li className="bento-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>
+                  <strong>Target Regions &amp; Audience:</strong> Key countries, languages, and buyer personas your digital platform needs to serve and convert.
+                </span>
+              </li>
+              <li className="bento-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>
+                  <strong>Ideal Launch Window:</strong> Upcoming product releases, campaigns, or quarterly milestones we should schedule sprints around.
+                </span>
+              </li>
+              <li className="bento-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>
+                  <strong>Current Stack or URL:</strong> Any existing website address, CMS, e-commerce store, or CRM integrations to preserve or upgrade.
+                </span>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 
