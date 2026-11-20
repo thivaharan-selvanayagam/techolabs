@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050914" />
+      <stop offset="55%" stop-color="#0A193B" />
+      <stop offset="100%" stop-color="#0A4FD4" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect x="80" y="72" width="52" height="52" rx="14" fill="#0A4FD4" stroke="#60A5FA" stroke-width="2" />
+  <circle cx="106" cy="98" r="9" fill="#FFFFFF" />
+  <text x="150" y="96" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="26" font-weight="800">TECHO LABS</text>
+  <text x="150" y="118" fill="#93C5FD" font-family="monospace" font-size="13" letter-spacing="3">TECHO TRADERS ECOSYSTEM</text>
+  <rect x="880" y="76" width="240" height="40" rx="20" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" />
+  <text x="1000" y="101" text-anchor="middle" fill="#DBEAFE" font-family="monospace" font-size="14" font-weight="700">SEO · AEO · GEO · AIO · SXO</text>
+  <text x="80" y="265" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="60" font-weight="800">Engineering Sub-Second</text>
+  <text x="80" y="340" fill="#60A5FA" font-family="system-ui, sans-serif" font-size="60" font-weight="800">Digital Platforms for 2027.</text>
+  <text x="80" y="415" fill="rgba(255,255,255,0.78)" font-family="system-ui, sans-serif" font-size="24">Next.js Web Engineering · AI Search Growth · Market Intelligence — 24+ Launches Across 8+ Countries.</text>
+  <line x1="80" y1="525" x2="1120" y2="525" stroke="rgba(255,255,255,0.16)" stroke-width="1" />
+  <text x="80" y="568" fill="#93C5FD" font-family="monospace" font-size="18">labs.techotraders.com.lk</text>
+  <text x="1120" y="568" text-anchor="end" fill="#93C5FD" font-family="monospace" font-size="18">Techo Traders · Techo Connect · Techo Xpress</text>
+</svg>

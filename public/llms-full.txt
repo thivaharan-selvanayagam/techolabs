@@ -1,0 +1,75 @@
+# Techo Labs — Complete AI & Knowledge Graph Reference (llms-full.txt)
+
+## 1. Organization & Corporate Structure
+**Techo Labs** ("The Digital Brain of the Techo Ecosystem") is a global digital engineering, AI search growth, and strategic market intelligence studio established in 2021 in Batticaloa, Sri Lanka.
+
+**Corporate Hierarchy**:
+- **Parent Company**: **Techo Traders (Pvt) Ltd** — https://www.techotraders.com.lk/ (The sole incorporated `(Pvt) Ltd` parent entity).
+- **Child Divisions under Techo Traders (Pvt) Ltd**:
+  1. **Techo Labs** — https://labs.techotraders.com.lk/ (Web & product engineering, SEO/AEO/GEO/AIO/SXO search marketing, and market intelligence).
+  2. **Techo Connect** — https://www.connect.techotraders.com.lk/ (Antenna manufacturing and telecommunications hardware infrastructure; digital presence powered by Techo Labs).
+  3. **Techo Xpress** — https://www.express.techotraders.com.lk/ (Express courier and smart logistics; live shipment tracking and booking software engineered by Techo Labs).
+
+- **Email**: labs@techotraders.com.lk
+- **Phone / WhatsApp**: +94 76 665 6007
+- **Operating Hours**: Monday – Saturday, 08:00 – 19:00 (GMT+5:30), with global sprint coverage across North America, Europe, UK, and MENA.
+- **Primary Regions Served**: Canada, Netherlands, United Kingdom, France, United Arab Emirates, Australia, Sri Lanka, United States.
+
+---
+
+## 2. 2027 Search & Experience Optimization Methodology (SEO · AEO · GEO · AIO · SXO)
+- **SEO (Search Engine Optimization)**: React Server Components (RSC), clean semantic HTML5, Core Web Vitals (<0.8s LCP, <50ms INP, 0.00 CLS), XML sitemaps, canonical hygiene, and topical authority.
+- **AEO (Answer Engine Optimization)**: Direct-answer summary blocks, conversational FAQPage JSON-LD, SpeakableSpecification markup, and structured definitions optimised for voice assistants and zero-click featured snippets.
+- **GEO (Generative Engine Optimization)**: Verifiable benchmarks, structured HTML comparison tables, clear entity relationships (`parentOrganization`, `subOrganization`, `sameAs`, `OfferCatalog`), and authoritative citations tailored for ChatGPT Search, Perplexity, Claude, and Google AI Overviews.
+- **AIO (AI Optimization)**: Dedicated `/llms.txt` and `/llms-full.txt` machine-readable endpoints plus explicit `robots.txt` permissions welcoming GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, and Google-Extended.
+- **SXO (Search Experience Optimization)**: Instant visual hierarchy, interactive Bento + Ledger portfolio exploration, transparent engagement models, and 1-click consultation pathways via form or WhatsApp.
+
+---
+
+## 3. Core Engines & Engagement Models
+
+### Engine 01. Next-Gen Web & Product Engineering (2–8 Weeks)
+- Next.js & React Server Component Web Applications
+- Bespoke 2027 UI/UX Design Systems & Interactive Prototyping
+- Headless & Hybrid CMS (Sanity, Strapi, WordPress)
+- High-Conversion E-Commerce (Shopify, WooCommerce, Custom Storefronts)
+- Custom SaaS Dashboards, APIs & Logistics Tracking Software
+
+### Engine 02. Omnichannel Growth & AI Search (90-Day Sprints)
+- Technical & Content SEO + AEO + GEO + AIO + SXO Execution
+- Google Search, Performance Max & Display Advertising (PPC)
+- Meta (Facebook & Instagram) Full-Funnel Paid Social
+- Conversion Rate Optimization (CRO) & GA4 Attribution
+
+### Engine 03. Market & Competitive Intelligence (2–4 Weeks)
+- Competitor Teardowns & Digital Moat Benchmarking
+- Total Addressable Market (TAM) & Regional Demand Sizing
+- Buyer Persona Research, User Interviews & Go-To-Market Playbooks
+
+---
+
+## 4. Complete Verified Portfolio (24 Live Deployments)
+1. **Ophtascan** (Canada | MedTech / AI) — https://ophtascan.ai/
+2. **Tirisi** (Netherlands | Jewellery & Luxury E-Commerce) — https://tirisi.com/
+3. **WeTrAQ** (Canada | Technology / SaaS) — https://www.wetraq.ca/
+4. **Palmyra Homes** (Canada | Real Estate) — https://palmyrahomes.ca/
+5. **Vooruit** (Netherlands | Enterprise IT / Corporate) — https://vooruit.nl/
+6. **Techo Traders (Pvt) Ltd** (Sri Lanka | Parent Corporate Group) — https://www.techotraders.com.lk/
+7. **Techo Connect** (Sri Lanka | Hardware & Telecom Division) — https://www.connect.techotraders.com.lk/
+8. **Techo Xpress** (Sri Lanka | Courier & Logistics Division) — https://www.express.techotraders.com.lk/
+9. **Koenig Developments** (Canada | Real Estate) — https://www.koenigdevelopments.com/
+10. **Shamal Digitals** (UAE | Digital Agency) — https://shamaldigitals.com/
+11. **Diapearl Group** (Canada | Corporate Conglomerate) — https://www.diapearlgroup.com/
+12. **Libertas Immigration** (Canada | Legal & Immigration) — https://libertasimmigration.ca/
+13. **Landeal Group** (Canada | Real Estate) — https://landealgroup.com/
+14. **Highgate Hill Murugan** (United Kingdom | Non-Profit / Cultural) — https://highgatehillmurugan.org/
+15. **Ideal Entertainment** (Canada | Entertainment) — https://idealentertainment.com/
+16. **Tamil Golfers Association** (Canada | Sports & Community) — https://www.tamilgolfersassociation.com/
+17. **Le Roi Indien** (France | Hospitality / Restaurant) — https://leroiindien.fr/
+18. **SITPI Academy** (Canada | Education / EdTech) — https://sitpi.academy/
+19. **Mattakalappu** (Sri Lanka | Cultural Community Archive) — https://mattakalappu.com/
+20. **Oorkuruvi** (Sri Lanka | Eco-Tourism & Media) — https://mattakalappu.com/oorkuruvi/
+21. **Sevendale** (Canada | Corporate) — https://sevendale.ca/
+22. **Blaze ITM** (Canada | Technology Consulting) — https://blazeitm.com/
+23. **Energy at the Office** (Netherlands | Corporate Wellness & HR) — https://energyattheoffice.nl/
+24. **FF Administraties** (Netherlands | Finance & Tax Advisory) — https://www.ffadministraties.nl/

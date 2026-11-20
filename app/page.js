@@ -1,307 +1,766 @@
-'use client'
-import { useEffect } from 'react'
 import Link from 'next/link'
-import Nav from '../components/Nav'
-import Footer from '../components/Footer'
-import PortfolioGrid from '../components/PortfolioGrid'
-import { useReveal, useCounter } from '../components/useReveal'
-import { services } from '../data/index'
+import { MotifArtwork } from '../components/PortfolioShowcase'
+import {
+  siteConfig,
+  stats,
+  shiftCards,
+  services,
+  optimizationPillars,
+  ecosystemLinks,
+  sisterEcosystemLinks,
+  engagementModels,
+  comparisonRows,
+  portfolioItems,
+  faqs,
+} from '../data/index'
+import { getServicesSchema, getFaqSchema } from '../lib/schema'
 
-export default function Home() {
-  useReveal()
-  useCounter()
+const MARQUEE_ITEMS = [
+  'Sub-Second Next.js Architecture',
+  'Search Engine Optimization (SEO)',
+  'Answer Engine Optimization (AEO)',
+  'Generative Engine Optimization (GEO)',
+  'AI Agent Readiness (AIO)',
+  'Search Experience Optimization (SXO)',
+  'Market & Competitor Intelligence',
+  '24+ Global Platforms Shipped',
+  'A Division of Techo Traders (Pvt) Ltd',
+]
+
+export default function HomePage() {
+  const servicesSchema = getServicesSchema()
+  const faqSchema = getFaqSchema(faqs)
+
+  const [webEngine, growthEngine, researchEngine] = services
+  const spotlightCases = portfolioItems.slice(0, 3)
+  const ledgerCases = portfolioItems.slice(3, 8)
 
   return (
     <>
-      <Nav />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
 
-      {/* ── HERO ── */}
-      <section className="hero">
-        <div className="hero__dots" />
-        <div className="hero__blob" />
-
-        <div className="hero__body">
-          <div className="container">
-            <div className="hero__content">
-
-              <div className="hero__eyebrow">
-                <div className="hero__badge">
-                  <div className="hero__badge-dot" />
-                  Techo Traders Ecosystem · The Brain
-                </div>
+      {/* ── ACT I: 2027 ARCHITECTURAL SPLIT HERO ── */}
+      <section className="hero-2027" aria-labelledby="hero-heading">
+        <div className="hero-grid-bg" />
+        <div className="container">
+          <div className="hero-layout">
+            <div>
+              <div className="eyebrow">
+                <span className="eyebrow-dot" />
+                Techo Labs · A Division of Techo Traders (Pvt) Ltd
               </div>
 
-              <h1 className="hero__title">
-                ARCHITECTING<br />
-                THE <em>DIGITAL</em><br />
-                <span className="outline">FUTURE.</span>
+              <h1 id="hero-heading" className="hero-h1">
+                Where <span className="text-gradient">Sub-Second</span> Engineering Meets Search &amp; AI Authority.
               </h1>
 
-              <p className="hero__desc">
-                Web development, digital marketing, and market research — built for businesses that demand precision, creativity, and measurable results.
+              <p className="hero-lead">
+                Outdated websites lose buyers before the first scroll. Techo Labs designs ultra-fast Next.js platforms, engineers{' '}
+                <strong style={{ color: 'var(--ink)' }}>SEO · AEO · GEO · AIO · SXO</strong> discovery, and backs every decision with market intelligence across 8+ countries.
               </p>
 
-              <div className="hero__actions">
-                <Link href="/portfolio" className="btn btn-primary">
-                  View Our Work
-                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+              <div className="hero-cta-row">
+                <Link href="/contact" className="btn btn-primary">
+                  Scope Your 2027 Platform
+                  <svg className="icon-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.2">
+                    <path d="M3 8h10M9 4l4 4-4 4" />
+                  </svg>
                 </Link>
-                <Link href="/contact" className="btn btn-outline">
-                  Start a Project
+                <Link href="/portfolio" className="btn btn-secondary">
+                  Inspect 24+ Live Platforms
                 </Link>
               </div>
 
-              <div className="hero__stats">
-                <div>
-                  <div className="hero__stat-val">
-                    <span data-count="24" data-suffix="+">24+</span>
-                  </div>
-                  <div className="hero__stat-lbl">Projects Delivered</div>
+              <div className="hero-trust-row">
+                <span className="hero-trust-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  98–100 Core Web Vitals Baseline
+                </span>
+                <span className="hero-trust-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  Google, ChatGPT &amp; Perplexity Indexed
+                </span>
+                <span className="hero-trust-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  4-Hour Senior Response SLA
+                </span>
+              </div>
+            </div>
+
+            {/* Right Column: Live Architecture & Group Console */}
+            <aside className="telemetry-card" aria-label="Techo Labs System Telemetry">
+              <div className="telemetry-top">
+                <div className="telemetry-dots">
+                  <span style={{ background: '#EF4444' }} />
+                  <span style={{ background: '#F59E0B' }} />
+                  <span style={{ background: '#10B981' }} />
                 </div>
-                <div>
-                  <div className="hero__stat-val">
-                    <span data-count="8" data-suffix="+">8+</span>
+                <span className="telemetry-badge">● TECHO LABS CORE v2027</span>
+              </div>
+
+              <div className="telemetry-scores">
+                <div className="telemetry-score-box">
+                  <div className="telemetry-score-val">
+                    99<span>/100</span>
                   </div>
-                  <div className="hero__stat-lbl">Countries Served</div>
+                  <div className="telemetry-score-lbl">Lighthouse</div>
                 </div>
-                <div>
-                  <div className="hero__stat-val">
-                    <span data-count="98" data-suffix="%">98%</span>
+                <div className="telemetry-score-box">
+                  <div className="telemetry-score-val">
+                    &lt;0.8<span>s</span>
                   </div>
-                  <div className="hero__stat-lbl">Client Satisfaction</div>
+                  <div className="telemetry-score-lbl">Target LCP</div>
                 </div>
-                <div>
-                  <div className="hero__stat-val">
-                    <span data-count="3" data-suffix="">3</span>
+                <div className="telemetry-score-box">
+                  <div className="telemetry-score-val">
+                    5<span>-Layer</span>
                   </div>
-                  <div className="hero__stat-lbl">Core Services</div>
+                  <div className="telemetry-score-lbl">Search &amp; AI</div>
                 </div>
               </div>
 
-            </div>
-          </div>
-        </div>
+              <div className="telemetry-pillars" aria-label="Optimization Layers">
+                {optimizationPillars.map((p) => (
+                  <span key={p.code} className="telemetry-pill">
+                    ✓ {p.code}
+                  </span>
+                ))}
+              </div>
 
-        {/* Floating browser card */}
-        <div className="hero__card">
-          <div className="hero__card-header">
-            <div className="hero__card-dots">
-              <span style={{ background: '#FF5F56' }}/>
-              <span style={{ background: '#FEBC2E' }}/>
-              <span style={{ background: '#27C93F' }}/>
-            </div>
-            <div className="hero__card-url">techotraders.com.lk</div>
-          </div>
-          <div className="hero__card-screen">
-            <div style={{
-              width: '100%', height: '100%',
-              background: 'linear-gradient(135deg, #0A4FD40A 0%, #0A4FD418 100%)',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              position: 'relative', overflow: 'hidden',
-            }}>
-              <div style={{
-                position: 'absolute', inset: 0,
-                backgroundImage: 'radial-gradient(circle, rgba(10,79,212,0.15) 1px, transparent 1px)',
-                backgroundSize: '18px 18px',
-              }}/>
-              <span style={{
-                fontFamily: 'var(--font-head)', fontWeight: 800,
-                fontSize: '3.5rem', color: 'rgba(10,79,212,0.12)',
-                letterSpacing: '-0.04em', position: 'relative',
-              }}>TL</span>
-            </div>
-          </div>
-          <div className="hero__card-metric">
-            <span className="hero__card-metric-label">Performance Score</span>
-            <span className="hero__card-metric-value">98 / 100</span>
-          </div>
-          <div className="hero__card-metric">
-            <span className="hero__card-metric-label">Load Time</span>
-            <span className="hero__card-metric-value">&lt; 1.2s</span>
-          </div>
-          <div className="hero__card-metric">
-            <span className="hero__card-metric-label">Mobile Optimised</span>
-            <span className="hero__card-metric-value">✓ Yes</span>
-          </div>
-        </div>
-      </section>
-
-      {/* ── SERVICES ── */}
-      <section className="services-section">
-        <div className="container">
-          <div className="services-section__header">
-            <div>
-              <div className="label" style={{ marginBottom: '0.75rem' }}>What We Do</div>
-              <h2 className="section-title reveal">Our Core <em>Services</em></h2>
-            </div>
-            <div>
-              <p className="services-section__desc reveal" data-d="1">
-                We combine technical depth with creative strategy — three services that work together to build, grow, and validate your digital presence.
-              </p>
-            </div>
-          </div>
-
-          <div className="services-grid">
-            {services.map((s, i) => (
-              <div className="service-card reveal" key={s.number} data-d={String(i)}>
-                <div className="service-card__num">{s.number}</div>
-                <div className="service-card__title">{s.title}</div>
-                <div className="service-card__desc">{s.description}</div>
-                <div className="service-card__features">
-                  {s.features.map(f => (
-                    <div className="service-card__feature" key={f}>{f}</div>
+              <div className="telemetry-eco">
+                <div className="telemetry-eco-lbl">Techo Traders (Pvt) Ltd Group</div>
+                <div className="telemetry-eco-links">
+                  {sisterEcosystemLinks.map((eco) => (
+                    <a
+                      key={eco.id}
+                      href={eco.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="telemetry-eco-link"
+                    >
+                      <span className="telemetry-eco-name">
+                        {eco.shortName.replace('Techo ', '')}
+                        <span style={{ color: '#60A5FA', fontSize: '0.72rem' }}>↗</span>
+                      </span>
+                      <span className="telemetry-eco-sub">{eco.badge}</span>
+                    </a>
                   ))}
                 </div>
               </div>
+            </aside>
+          </div>
+
+          {/* 4 Proof Metrics */}
+          <div className="metrics-strip">
+            {stats.map((s) => (
+              <div key={s.label} className="metric-tile">
+                <div className="metric-value">
+                  {s.value}
+                  <span className="accent">{s.suffix}</span>
+                </div>
+                <div className="metric-label">{s.label}</div>
+                <div className="metric-detail">{s.detail}</div>
+              </div>
             ))}
           </div>
-
-          <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
-            <Link href="/services" className="btn btn-outline">
-              Explore All Services
-              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-            </Link>
-          </div>
         </div>
       </section>
 
-      {/* ── PORTFOLIO PREVIEW ── */}
-      <section className="portfolio-section">
+      {/* ── ACT II: KINETIC CAPABILITY TICKER ── */}
+      <div className="marquee-band" aria-hidden="true">
+        <div className="marquee-track">
+          {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((text, idx) => (
+            <span key={idx} className="marquee-item">
+              <span className="marquee-sep" />
+              {text}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* ── ACT III: THE 2027 DIGITAL REALITY (WHY BRANDS UPGRADE) ── */}
+      <section className="section section--subtle" aria-labelledby="shift-heading">
         <div className="container">
-          <div className="portfolio-section__header">
+          <div className="section-header-split">
             <div>
-              <div className="label" style={{ marginBottom: '0.75rem' }}>Our Work</div>
-              <h2 className="section-title reveal">Selected <em>Projects</em></h2>
+              <div className="eyebrow" style={{ marginBottom: '0.9rem' }}>
+                The 2027 Shift
+              </div>
+              <h2 id="shift-heading" className="section-heading reveal">
+                Why Pre-2026 Websites<br />
+                <em>Quietly Leak Revenue.</em>
+              </h2>
             </div>
-            <Link href="/portfolio" className="btn btn-ghost">
-              View All 24 Projects
-              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-            </Link>
+            <p className="section-lead reveal" style={{ maxWidth: '500px' }}>
+              Buyer behaviour has shifted faster in the last 24 months than in the previous decade. Winning online now demands speed, machine-readable authority, and commercial research working as one system.
+            </p>
           </div>
 
-          <PortfolioGrid limit={6} />
-
-          <div style={{ textAlign: 'center', marginTop: '3rem' }}>
-            <Link href="/portfolio" className="btn btn-primary">
-              View Full Portfolio (24 Projects)
-              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-            </Link>
+          <div className="shift-grid">
+            {shiftCards.map((card) => (
+              <article key={card.tag} className="shift-card reveal">
+                <div>
+                  <div className="shift-tag">{card.tag}</div>
+                  <h3 className="shift-title">{card.title}</h3>
+                  <p className="shift-body">{card.body}</p>
+                </div>
+                <div className="shift-stat-row">
+                  <span className="shift-stat">{card.stat}</span>
+                  <span className="shift-stat-lbl">{card.statLabel}</span>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ── ABOUT / ECOSYSTEM ── */}
-      <section className="about-section">
+      {/* ── ACT IV: THE ASYMMETRIC 3-ENGINE BLUEPRINT ── */}
+      <section className="section" aria-labelledby="engines-heading">
         <div className="container">
-          <div className="about-section__inner">
+          <div className="section-header-split">
             <div>
-              <div className="label" style={{ marginBottom: '0.75rem' }}>Who We Are</div>
-              <h2 className="section-title reveal" style={{ marginBottom: '1.5rem' }}>The Brain of the<br /><em>Techo Ecosystem</em></h2>
-              <p className="reveal" data-d="1">
-                Techo Labs is the digital intelligence arm of Techo Traders — the company that provides the strategic and creative foundation for the entire ecosystem. We don't just build websites. We build digital presences that work.
-              </p>
-              <p className="reveal" data-d="2">
-                Based in Batticaloa, Sri Lanka, we've delivered 24+ projects across 8 countries — from Canadian real estate platforms to AI-powered medical diagnostics sites, Dutch corporate platforms to Sri Lankan community portals.
-              </p>
-              <p className="reveal" data-d="3">
-                Our work powers the tracking software behind Techo Xpress, the digital marketing for Techo Connect, and the web presence of the parent company Techo Traders.
-              </p>
-              <div style={{ marginTop: '2rem' }} className="reveal" data-d="3">
-                <Link href="/about" className="btn btn-outline">
-                  Our Story
-                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+              <div className="eyebrow" style={{ marginBottom: '0.9rem' }}>
+                Studio Architecture
+              </div>
+              <h2 id="engines-heading" className="section-heading reveal">
+                Three Compounding Engines.<br />
+                <em>Zero Silos.</em>
+              </h2>
+            </div>
+            <Link href="/services" className="btn btn-secondary">
+              Full Capability Breakdown
+              <svg className="icon-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.2">
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </Link>
+          </div>
+
+          <div className="engines-blueprint">
+            {/* Left Primary Flagship Card: Web & Product Engineering */}
+            <article className="engine-primary-card reveal">
+              <div>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
+                  <span className="eyebrow eyebrow--dark">
+                    ENGINE {webEngine.number} · {webEngine.timeline}
+                  </span>
+                  <span className="mono" style={{ fontSize: '0.74rem', color: '#93C5FD' }}>
+                    Next.js · React · Edge
+                  </span>
+                </div>
+
+                <h3 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.35rem)', fontWeight: 800, color: '#FFFFFF', marginBottom: '0.85rem' }}>
+                  {webEngine.title}
+                </h3>
+
+                <p style={{ color: 'rgba(255,255,255,0.78)', fontSize: '0.98rem', lineHeight: 1.75, marginBottom: '1.75rem' }}>
+                  {webEngine.summary}
+                </p>
+
+                <div className="engine-chip-grid">
+                  {webEngine.features.slice(0, 6).map((f) => (
+                    <span key={f} className="engine-chip">
+                      {f}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  flexWrap: 'wrap',
+                  gap: '1rem',
+                  paddingTop: '1.5rem',
+                  borderTop: '1px solid rgba(255,255,255,0.14)',
+                }}
+              >
+                <span className="mono" style={{ fontSize: '0.74rem', color: '#6EE7B7' }}>
+                  ● Ships with 98+ CWV &amp; Full JSON-LD Entity Graph
+                </span>
+                <Link href="/services#web" className="btn btn-white" style={{ padding: '0.65rem 1.25rem', fontSize: '0.84rem' }}>
+                  Explore Web Engineering →
                 </Link>
               </div>
-            </div>
+            </article>
 
-            <div className="about-section__visual">
-              <p style={{ fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--blue)', marginBottom: '1.25rem' }}>
-                THE TECHO ECOSYSTEM
-              </p>
-              <div className="ecosystem-cards">
-                <div className="ecosystem-card ecosystem-card--labs">
-                  <div className="ecosystem-card__emoji">🧠</div>
+            {/* Right Stacked Cards: AI Search Growth + Market Intelligence */}
+            <div className="engine-stack-col">
+              {[growthEngine, researchEngine].map((eng) => (
+                <article key={eng.id} className="engine-secondary-card reveal">
                   <div>
-                    <div className="ecosystem-card__name">Techo Labs <span style={{ fontSize: '0.7rem', color: 'var(--blue)', fontWeight: 600 }}>(You're Here)</span></div>
-                    <div className="ecosystem-card__desc">Web development, digital marketing, and market research powering the entire group.</div>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
+                      <span
+                        className="mono"
+                        style={{
+                          fontSize: '0.7rem',
+                          fontWeight: 700,
+                          color: eng.accent,
+                          background: `${eng.accent}12`,
+                          padding: '0.24rem 0.65rem',
+                          borderRadius: '6px',
+                        }}
+                      >
+                        ENGINE {eng.number} · {eng.timeline}
+                      </span>
+                    </div>
+                    <h3 style={{ fontSize: '1.35rem', fontWeight: 800, color: 'var(--ink)', marginBottom: '0.5rem' }}>
+                      {eng.title}
+                    </h3>
+                    <p style={{ fontSize: '0.9rem', color: 'var(--muted)', lineHeight: 1.68 }}>
+                      {eng.summary}
+                    </p>
                   </div>
-                </div>
-                <div className="ecosystem-card ecosystem-card--xpress">
-                  <div className="ecosystem-card__emoji">💪</div>
-                  <div>
-                    <div className="ecosystem-card__name">Techo Xpress</div>
-                    <div className="ecosystem-card__desc">Courier and logistics arm. Powered by tracking software built by Labs.</div>
+
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      paddingTop: '0.95rem',
+                      borderTop: '1px solid var(--border)',
+                    }}
+                  >
+                    <span className="mono" style={{ fontSize: '0.72rem', color: 'var(--slate)' }}>
+                      {eng.subtitle}
+                    </span>
+                    <Link href={`/services#${eng.id}`} className="bento-card-link">
+                      Details →
+                    </Link>
                   </div>
-                </div>
-                <div className="ecosystem-card ecosystem-card--connect">
-                  <div className="ecosystem-card__emoji">📡</div>
-                  <div>
-                    <div className="ecosystem-card__name">Techo Connect</div>
-                    <div className="ecosystem-card__desc">Antenna and hardware manufacturing. Digital presence managed by Labs.</div>
-                  </div>
-                </div>
-              </div>
+                </article>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── PROCESS ── */}
-      <section className="process-section">
+      {/* ── ACT V: CURATED CASE SPOTLIGHTS + STUDIO LEDGER ── */}
+      <section className="section section--subtle" aria-labelledby="work-heading">
         <div className="container">
-          <div style={{ marginBottom: '0' }}>
-            <div className="label" style={{ marginBottom: '0.75rem' }}>How We Work</div>
-            <h2 className="section-title reveal">Our <em>Process</em></h2>
-          </div>
-          <div className="process-grid">
-            {[
-              { n: '01', title: 'Discovery', desc: 'We start by understanding your business, audience, and goals. No assumptions — we ask the right questions first.' },
-              { n: '02', title: 'Strategy', desc: 'We map out the architecture, content strategy, and technical approach before writing a single line of code.' },
-              { n: '03', title: 'Build', desc: 'Design and development happen in parallel with regular check-ins. You see progress, not just a finished product.' },
-              { n: '04', title: 'Launch & Grow', desc: 'We don\'t disappear after launch. SEO, performance monitoring, and ongoing support are part of the package.' },
-            ].map((step, i) => (
-              <div className="process-step reveal" key={step.n} data-d={String(i)}>
-                <div className="process-step__num">{step.n}</div>
-                <div className="process-step__title">{step.title}</div>
-                <div className="process-step__desc">{step.desc}</div>
+          <div className="section-header-split">
+            <div>
+              <div className="eyebrow" style={{ marginBottom: '0.9rem' }}>
+                Verified Production Proof
               </div>
+              <h2 id="work-heading" className="section-heading reveal">
+                Built in Batticaloa.<br />
+                <em>Deployed Across 8+ Countries.</em>
+              </h2>
+            </div>
+            <Link href="/portfolio" className="btn btn-primary">
+              Open Interactive Case Stage (24)
+              <svg className="icon-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.2">
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </Link>
+          </div>
+
+          {/* 3 Dramatic Dark/Editorial Case Spotlights */}
+          <div className="showcase-bento" style={{ marginBottom: '2rem' }}>
+            {spotlightCases.map((item, idx) => {
+              const accents = ['#06B6D4', '#C084FC', '#3B82F6']
+              const bgs = ['#061826', '#160B24', '#08142C']
+              const accent = accents[idx] || '#0A4FD4'
+              const cleanUrl = item.url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')
+
+              return (
+                <article
+                  key={item.id}
+                  className="showcase-card showcase-card--dark reveal"
+                  style={{ '--card-accent': accent, '--card-dark-bg': bgs[idx] }}
+                >
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="showcase-card__inner"
+                  >
+                    <div className="showcase-card__meta">
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        <span className="showcase-idx mono">/{item.index}</span>
+                        <span className="showcase-sector" style={{ color: accent }}>
+                          {item.category}
+                        </span>
+                      </div>
+                      <span className="showcase-country mono">
+                        {item.countryCode} · {item.location}
+                      </span>
+                    </div>
+
+                    <div className="showcase-stage">
+                      <MotifArtwork motif={item.motif} accent={accent} isDark={true} />
+                      <div className="showcase-metric-pill mono">{item.metric}</div>
+                    </div>
+
+                    <div className="showcase-content">
+                      <div>
+                        <h3 className="showcase-title">{item.title}</h3>
+                        <p className="showcase-desc">{item.description}</p>
+                      </div>
+                      <div className="showcase-foot">
+                        <span className="mono showcase-domain">{cleanUrl}</span>
+                        <span className="showcase-cta">
+                          Launch Live ↗
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </article>
+              )
+            })}
+          </div>
+
+          {/* Sleek Studio Index Ledger Preview */}
+          <div className="studio-ledger reveal">
+            <div className="studio-ledger__head mono">
+              <span>IDX</span>
+              <span>MORE LIVE DEPLOYMENTS</span>
+              <span>SECTOR</span>
+              <span>MARKET</span>
+              <span style={{ textAlign: 'right' }}>LIVE ENDPOINT</span>
+            </div>
+            {ledgerCases.map((item) => {
+              const cleanUrl = item.url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')
+              return (
+                <a
+                  key={item.id}
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="studio-ledger__row"
+                >
+                  <span className="studio-ledger__idx mono">{item.index}</span>
+                  <div className="studio-ledger__main">
+                    <div className="studio-ledger__title">
+                      {item.title}
+                      {item.ecosystem && <span className="ledger-eco-pill">Techo Group</span>}
+                    </div>
+                    <div className="studio-ledger__desc">{item.description}</div>
+                  </div>
+                  <span className="studio-ledger__cat" style={{ color: 'var(--blue)' }}>
+                    {item.category}
+                  </span>
+                  <span className="studio-ledger__loc mono">
+                    {item.countryCode} · {item.location}
+                  </span>
+                  <span className="studio-ledger__link mono">
+                    {cleanUrl} ↗
+                  </span>
+                </a>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ── ACT VI: 5-LAYER DISCOVERY STACK + BENCHMARK MATRIX ── */}
+      <section className="section section--dark" aria-labelledby="discovery-heading">
+        <div className="container">
+          <div className="section-header-split" style={{ marginBottom: '1rem' }}>
+            <div>
+              <div className="eyebrow eyebrow--dark" style={{ marginBottom: '0.9rem' }}>
+                <span className="eyebrow-dot" />
+                5-Layer Discovery Protocol
+              </div>
+              <h2 id="discovery-heading" className="section-heading section-heading--light reveal">
+                Optimised for Search Engines,<br />
+                <em>AI Answer Engines &amp; Humans.</em>
+              </h2>
+            </div>
+            <p style={{ maxWidth: '500px', fontSize: '0.96rem', color: 'rgba(255,255,255,0.72)', lineHeight: 1.75 }}>
+              Every Techo Labs build unifies SEO, AEO, GEO, AIO, and SXO at the architectural level — capturing organic search traffic, generative AI citations, and high-trust buyer conversions simultaneously.
+            </p>
+          </div>
+
+          <div className="pillars-grid" style={{ marginBottom: '4rem' }}>
+            {optimizationPillars.map((pillar) => (
+              <article key={pillar.code} className="pillar-card reveal">
+                <div>
+                  <span className="pillar-code">{pillar.code}</span>
+                  <h3 className="pillar-name">{pillar.name}</h3>
+                  <p className="pillar-summary">{pillar.summary}</p>
+                </div>
+                <div className="pillar-metric">→ {pillar.metric}</div>
+              </article>
+            ))}
+          </div>
+
+          <div className="comparison-wrap reveal">
+            <table className="comparison-table">
+              <thead>
+                <tr>
+                  <th scope="col">Architectural Dimension</th>
+                  <th scope="col">Conventional Web Agency</th>
+                  <th scope="col" className="col-techo">
+                    Techo Labs 2027 Standard
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparisonRows.map((row) => (
+                  <tr key={row.dimension}>
+                    <td className="col-dim">{row.dimension}</td>
+                    <td className="col-legacy">{row.legacy}</td>
+                    <td className="col-techo">✓ {row.techo}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* ── ACT VII: TECHO TRADERS (PVT) LTD ECOSYSTEM ── */}
+      <section className="section" aria-labelledby="ecosystem-heading">
+        <div className="container">
+          <div className="section-header-split">
+            <div>
+              <div className="eyebrow" style={{ marginBottom: '0.9rem' }}>
+                Corporate Group
+              </div>
+              <h2 id="ecosystem-heading" className="section-heading reveal">
+                Powered by the<br />
+                <em>Techo Traders (Pvt) Ltd</em> Group
+              </h2>
+            </div>
+            <p className="section-lead reveal" style={{ maxWidth: '510px' }}>
+              <strong>Techo Traders (Pvt) Ltd</strong> is our incorporated parent company. Techo Labs operates as its digital intelligence division alongside sister divisions <strong>Techo Connect</strong> and <strong>Techo Xpress</strong>.
+            </p>
+          </div>
+
+          <div className="ecosystem-grid">
+            {ecosystemLinks.map((node) => {
+              const cardInner = (
+                <>
+                  <div>
+                    <div className="eco-node-head">
+                      <div>
+                        <span
+                          className="eco-node-badge"
+                          style={{
+                            background: `${node.accent}14`,
+                            color: node.accent,
+                            border: `1px solid ${node.accent}30`,
+                          }}
+                        >
+                          {node.badge}
+                        </span>
+                        <h3 className="eco-node-title">{node.name}</h3>
+                        <div className="eco-node-role">{node.role}</div>
+                      </div>
+                      {!node.isCurrent ? (
+                        <span
+                          style={{
+                            width: 38,
+                            height: 38,
+                            borderRadius: '50%',
+                            background: 'var(--bg-subtle)',
+                            border: '1px solid var(--border)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            color: 'var(--blue)',
+                            flexShrink: 0,
+                          }}
+                        >
+                          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.2">
+                            <path d="M4 12L12 4M6 4h6v6" />
+                          </svg>
+                        </span>
+                      ) : (
+                        <span
+                          className="mono"
+                          style={{
+                            fontSize: '0.68rem',
+                            fontWeight: 700,
+                            color: 'var(--blue)',
+                            padding: '0.3rem 0.65rem',
+                            borderRadius: '999px',
+                            background: 'var(--blue-soft)',
+                          }}
+                        >
+                          ● Current Site
+                        </span>
+                      )}
+                    </div>
+
+                    <p className="eco-node-desc" style={{ marginTop: '1rem' }}>
+                      {node.description}
+                    </p>
+                  </div>
+
+                  <div>
+                    <div className="eco-node-synergy" style={{ borderLeftColor: node.accent, marginBottom: '1rem' }}>
+                      {node.synergy}
+                    </div>
+                    <div className="eco-node-foot">
+                      <span>{node.domain}</span>
+                      <span>{node.isCurrent ? 'Active Platform' : `Visit ${node.shortName} ↗`}</span>
+                    </div>
+                  </div>
+                </>
+              )
+
+              return node.isCurrent ? (
+                <div key={node.id} className="eco-node-card eco-node-card--active reveal">
+                  {cardInner}
+                </div>
+              ) : (
+                <a
+                  key={node.id}
+                  href={node.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="eco-node-card reveal"
+                >
+                  {cardInner}
+                </a>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ── ACT VIII: TRANSPARENT ENGAGEMENT MODELS ── */}
+      <section className="section section--subtle" aria-labelledby="models-heading">
+        <div className="container">
+          <div style={{ textAlign: 'center', maxWidth: '680px', margin: '0 auto 3.25rem' }}>
+            <div className="eyebrow" style={{ marginBottom: '0.9rem' }}>
+              How Teams Adopt Us
+            </div>
+            <h2 id="models-heading" className="section-heading reveal">
+              Flexible Engagement <em>Architectures</em>
+            </h2>
+          </div>
+
+          <div className="models-grid">
+            {engagementModels.map((model, idx) => (
+              <article
+                key={model.code}
+                className={`model-card reveal ${idx === 1 ? 'model-card--featured' : ''}`}
+              >
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.85rem' }}>
+                    <span className="process-num" style={{ marginBottom: 0 }}>
+                      {model.code}
+                    </span>
+                    <span className="mono" style={{ fontSize: '0.72rem', color: 'var(--muted)' }}>
+                      {model.cadence}
+                    </span>
+                  </div>
+
+                  <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--ink)', marginBottom: '0.65rem' }}>
+                    {model.name}
+                  </h3>
+                  <p style={{ fontSize: '0.88rem', color: 'var(--muted)', lineHeight: 1.7, marginBottom: '1.25rem' }}>
+                    {model.summary}
+                  </p>
+
+                  <ul className="bento-feature-list" style={{ marginBottom: 0 }}>
+                    {model.highlights.map((h) => (
+                      <li key={h} className="bento-feature-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        {h}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <Link
+                  href="/contact"
+                  className={`btn ${idx === 1 ? 'btn-primary' : 'btn-secondary'}`}
+                  style={{ width: '100%' }}
+                >
+                  Select {model.name.split(' ')[0]} Model →
+                </Link>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── CTA BAND ── */}
-      <section style={{ padding: '5rem 0', background: 'var(--blue)', position: 'relative', overflow: 'hidden' }}>
-        <div style={{
-          position: 'absolute', inset: 0,
-          backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)',
-          backgroundSize: '32px 32px',
-          pointerEvents: 'none',
-        }}/>
-        <div className="container" style={{ position: 'relative' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap' }}>
-            <div>
-              <h2 style={{ fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: 'clamp(1.8rem,4vw,3rem)', color: 'white', letterSpacing: '-0.02em', lineHeight: 1.05, marginBottom: '0.6rem' }}>
-                Ready to Build<br />Something Great?
-              </h2>
-              <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '1rem' }}>
-                Let's talk about your project. No obligation, no sales pitch.
-              </p>
+      {/* ── DIRECT-ANSWER FAQ ── */}
+      <section className="section" aria-labelledby="faq-heading">
+        <div className="container">
+          <div style={{ textAlign: 'center', maxWidth: '640px', margin: '0 auto 3rem' }}>
+            <div className="eyebrow" style={{ marginBottom: '0.9rem' }}>
+              Direct Answers
             </div>
-            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-              <Link href="/contact" className="btn" style={{ background: 'white', color: 'var(--blue)', fontWeight: 700 }}>
-                Start a Project
-                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-              </Link>
-              <Link href="/portfolio" className="btn" style={{ background: 'transparent', color: 'white', border: '2px solid rgba(255,255,255,0.35)' }}>
-                View Portfolio
-              </Link>
-            </div>
+            <h2 id="faq-heading" className="section-heading reveal">
+              Executive <em>FAQ</em>
+            </h2>
+          </div>
+
+          <div className="faq-stack">
+            {faqs.map((item, idx) => (
+              <details key={item.question} className="faq-item" open={idx === 0}>
+                <summary className="faq-summary">
+                  <span>{item.question}</span>
+                  <span className="faq-chevron" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.2">
+                      <path d="M4 6l4 4 4-4" />
+                    </svg>
+                  </span>
+                </summary>
+                <div className="faq-answer">{item.answer}</div>
+              </details>
+            ))}
           </div>
         </div>
       </section>
 
-      <Footer />
+      {/* ── FINAL CTA ── */}
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <div className="cta-banner">
+            <div className="cta-banner__content">
+              <div className="eyebrow eyebrow--dark" style={{ marginBottom: '1rem' }}>
+                <span className="eyebrow-dot" />
+                Q1 / Q2 Sprint Slots Open
+              </div>
+              <h2 className="section-heading section-heading--light" style={{ marginBottom: '0.85rem' }}>
+                Ready to Upgrade Your Digital Velocity?
+              </h2>
+              <p style={{ color: 'rgba(255,255,255,0.78)', fontSize: '1.02rem', lineHeight: 1.7 }}>
+                Send us your goals or current URL — receive an actionable architecture &amp; search growth proposal within 48 hours.
+              </p>
+            </div>
+            <div className="cta-banner__actions">
+              <Link href="/contact" className="btn btn-white">
+                Start a Project Brief
+                <svg className="icon-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.2">
+                  <path d="M3 8h10M9 4l4 4-4 4" />
+                </svg>
+              </Link>
+              <a
+                href={siteConfig.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-glass"
+              >
+                WhatsApp Direct Desk ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   )
 }

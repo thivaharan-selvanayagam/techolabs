@@ -1,144 +1,267 @@
-'use client'
 import Link from 'next/link'
-import Nav from '../../components/Nav'
-import Footer from '../../components/Footer'
-import { useReveal } from '../../components/useReveal'
+import { services, optimizationPillars, faqs, siteConfig } from '../../data/index'
+import { getBreadcrumbSchema, getServicesSchema, getFaqSchema } from '../../lib/schema'
 
-export default function Services() {
-  useReveal()
+export const metadata = {
+  title: 'Services — Next.js Web Engineering, AI Search (SEO/AEO/GEO) & Market Research',
+  description:
+    'Explore Techo Labs’ three integrated services: Sub-Second Next.js Web Engineering, Omnichannel Growth & AI Search (SEO, AEO, GEO, AIO, SXO), and Strategic Market Intelligence.',
+  alternates: {
+    canonical: '/services',
+  },
+  openGraph: {
+    title: 'Techo Labs Services — Web Engineering, AI Search Growth & Market Research',
+    description:
+      'Custom Next.js web platforms, unified SEO/AEO/GEO/AIO/SXO digital marketing, and decision-grade market research delivered globally.',
+    url: `${siteConfig.url}/services`,
+  },
+}
 
-  const serviceBlocks = [
-    {
-      id: 'web',
-      num: '01',
-      title: 'Web Development',
-      subtitle: 'From Concept to Code',
-      description: [
-        'We build websites and web applications that are fast, scalable, and maintainable. Using modern frameworks like Next.js, React, and Node.js, we create digital products that perform as well as they look.',
-        'Every project begins with architecture planning — we think about SEO, performance, and long-term maintainability from day one, not as an afterthought.',
-      ],
-      features: [
-        'Custom Design & Frontend Development',
-        'Next.js / React Web Applications',
-        'CMS Integration (WordPress, Sanity, Strapi)',
-        'E-Commerce Solutions (WooCommerce, Shopify)',
-        'RESTful API & Backend Development',
-        'Database Design & Management',
-        'Web Performance Optimisation',
-        'Mobile-First Responsive Design',
-      ],
-      ideal: ['Startups launching their first product', 'Businesses redesigning outdated sites', 'Companies needing custom web applications', 'E-commerce stores needing better performance'],
-      color: '#0A4FD4',
-    },
-    {
-      id: 'marketing',
-      num: '02',
-      title: 'Digital Marketing',
-      subtitle: 'Grow Your Audience',
-      description: [
-        'A great website is only half the picture. We run data-driven digital marketing campaigns that generate real leads, grow your brand, and deliver measurable ROI across every channel.',
-        'We don\'t believe in vanity metrics. Every campaign we run is tied to a business objective — whether that\'s leads, sales, signups, or brand awareness.',
-      ],
-      features: [
-        'Search Engine Optimisation (Technical + Content)',
-        'Google Search & Display Ads (PPC)',
-        'Meta Ads (Facebook & Instagram)',
-        'Social Media Strategy & Management',
-        'Email Marketing & Automation',
-        'Content Marketing & Copywriting',
-        'Analytics Setup & Reporting (GA4, GTM)',
-        'Conversion Rate Optimisation (CRO)',
-      ],
-      ideal: ['Businesses wanting more website traffic', 'E-commerce stores targeting higher sales', 'Brands building social media presence', 'Companies needing lead generation campaigns'],
-      color: '#0891B2',
-    },
-    {
-      id: 'research',
-      num: '03',
-      title: 'Market Research',
-      subtitle: 'Intelligence Before Action',
-      description: [
-        'Before you invest in a campaign or product, you need to know if it will work. Our research service gives you the market intelligence to make strategic decisions with confidence.',
-        'We combine quantitative data analysis with qualitative research methods — competitor audits, user interviews, industry reports — to give you a complete picture of your market landscape.',
-      ],
-      features: [
-        'Competitor Analysis & Benchmarking',
-        'Target Audience Research & Personas',
-        'Industry & Market Sizing Reports',
-        'Brand Positioning Analysis',
-        'Keyword & Search Intent Research',
-        'Customer Journey Mapping',
-        'User Experience (UX) Research',
-        'Strategic Recommendations & Roadmaps',
-      ],
-      ideal: ['Businesses entering new markets', 'Products looking for product-market fit', 'Companies repositioning their brand', 'Investors needing due diligence research'],
-      color: '#059669',
-    },
-  ]
+export default function ServicesPage() {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Services', url: '/services' },
+  ])
+  const servicesSchema = getServicesSchema()
+  const faqSchema = getFaqSchema(faqs.slice(0, 4))
 
   return (
     <>
-      <Nav />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
 
-      <section className="page-hero">
-        <div className="page-hero__dots" />
+      {/* INNER HERO */}
+      <section className="inner-hero">
+        <div className="hero-grid-bg" />
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-          <div className="page-hero__lbl">Techo Labs / Services</div>
-          <h1 className="page-hero__title">Three Services.<br /><em>One Digital Vision.</em></h1>
+          <nav className="breadcrumb" aria-label="Breadcrumb">
+            <Link href="/">Home</Link>
+            <span>/</span>
+            <span aria-current="page">Services</span>
+          </nav>
+
+          <h1 className="inner-hero__title">
+            Three Integrated Capabilities.<br />
+            <span className="text-gradient">Engineered for Measurable ROI.</span>
+          </h1>
+
+          <p className="inner-hero__lead">
+            Whether you need a lightning-fast Next.js platform, organic &amp; AI search dominance, or pre-launch market intelligence, every engagement is built on senior engineering and transparent metrics.
+          </p>
+
+          <div className="direct-answer">
+            <strong>Quick Overview:</strong> Techo Labs delivers <strong>(01) Next-Gen Web Engineering</strong> in 2–8 weeks, <strong>(02) Omnichannel Growth &amp; AI Search (SEO, AEO, GEO, AIO, SXO + Paid Ads)</strong> via 90-day growth sprints, and <strong>(03) Strategic Market Research</strong> in 2–4 weeks for clients across 8+ countries.
+          </div>
+
+          <div className="filter-pills" style={{ marginTop: '1.75rem' }}>
+            {services.map((s) => (
+              <a key={s.id} href={`#${s.id}`} className="filter-pill">
+                {s.number} · {s.shortTitle}
+              </a>
+            ))}
+            <a href="#search-architecture" className="filter-pill">
+              SEO · AEO · GEO · AIO · SXO
+            </a>
+          </div>
         </div>
       </section>
 
-      {serviceBlocks.map((s, idx) => (
+      {/* SERVICE DEEP-DIVE SECTIONS */}
+      {services.map((service, index) => (
         <section
-          key={s.id}
-          id={s.id}
-          style={{
-            padding: '6rem 0',
-            background: idx % 2 === 0 ? 'var(--white)' : 'var(--off-white)',
-            borderBottom: '1px solid var(--border-light)',
-          }}
+          key={service.id}
+          id={service.id}
+          className={`section ${index % 2 === 1 ? 'section--subtle' : ''}`}
+          aria-labelledby={`heading-${service.id}`}
         >
           <div className="container">
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'start' }}
-              className="service-detail-grid">
+            <div className="two-col-detail">
               <div>
-                <div style={{ fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: '5rem', color: `${s.color}12`, letterSpacing: '-0.06em', lineHeight: 1, marginBottom: '-0.5rem' }}>{s.num}</div>
-                <div className="label" style={{ color: s.color, marginBottom: '0.6rem' }}>{s.subtitle}</div>
-                <h2 style={{ fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: 'clamp(2rem,3.5vw,2.8rem)', color: 'var(--ink)', letterSpacing: '-0.02em', lineHeight: 1.05, marginBottom: '1.5rem' }}>
-                  {s.title}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
+                  <span
+                    className="mono"
+                    style={{
+                      fontSize: '0.76rem',
+                      fontWeight: 800,
+                      padding: '0.3rem 0.7rem',
+                      borderRadius: '6px',
+                      background: `${service.accent}14`,
+                      color: service.accent,
+                    }}
+                  >
+                    PILLAR {service.number}
+                  </span>
+                  <span className="mono" style={{ fontSize: '0.75rem', color: 'var(--muted)' }}>
+                    Typical Delivery: {service.timeline}
+                  </span>
+                </div>
+
+                <h2
+                  id={`heading-${service.id}`}
+                  className="section-heading reveal"
+                  style={{ marginBottom: '0.6rem' }}
+                >
+                  {service.title}
                 </h2>
-                {s.description.map((p, i) => (
-                  <p key={i} className="reveal" data-d={String(i)} style={{ fontSize: '0.975rem', color: 'var(--muted)', lineHeight: 1.85, marginBottom: '1rem' }}>{p}</p>
+                <p
+                  style={{
+                    fontWeight: 700,
+                    color: service.accent,
+                    fontSize: '0.95rem',
+                    marginBottom: '1.35rem',
+                  }}
+                >
+                  {service.subtitle}
+                </p>
+
+                {service.description.map((paragraph, pIdx) => (
+                  <p
+                    key={pIdx}
+                    className="reveal"
+                    style={{
+                      fontSize: '0.96rem',
+                      color: 'var(--slate)',
+                      lineHeight: 1.8,
+                      marginBottom: '1.1rem',
+                    }}
+                  >
+                    {paragraph}
+                  </p>
                 ))}
-                <div style={{ marginTop: '2rem' }} className="reveal" data-d="2">
-                  <Link href="/contact" className="btn btn-primary" style={{ background: s.color, boxShadow: `0 4px 16px ${s.color}30` }}>
-                    Start a Project
-                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+
+                <div
+                  style={{
+                    marginTop: '1.5rem',
+                    padding: '1rem 1.25rem',
+                    borderRadius: 'var(--r-sm)',
+                    background: 'var(--bg-subtle)',
+                    border: '1px solid var(--border)',
+                    fontSize: '0.82rem',
+                    color: 'var(--ink-2)',
+                  }}
+                >
+                  <strong style={{ color: 'var(--ink)', display: 'block', marginBottom: '0.25rem' }}>
+                    Core Deliverables:
+                  </strong>
+                  {service.deliverables}
+                </div>
+
+                <div style={{ marginTop: '1.85rem', display: 'flex', gap: '0.85rem', flexWrap: 'wrap' }}>
+                  <Link href="/contact" className="btn btn-primary">
+                    Scope {service.shortTitle}
+                    <svg className="icon-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.2">
+                      <path d="M3 8h10M9 4l4 4-4 4" />
+                    </svg>
+                  </Link>
+                  <Link href="/portfolio" className="btn btn-secondary">
+                    See Related Work
                   </Link>
                 </div>
               </div>
 
-              <div className="reveal" data-d="1">
-                <div style={{ background: 'var(--white)', border: '1px solid var(--border-light)', borderRadius: 'var(--radius-lg)', padding: '2rem', marginBottom: '1.5rem', boxShadow: 'var(--shadow-sm)' }}>
-                  <div style={{ fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: s.color, marginBottom: '1rem' }}>What's Included</div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                    {s.features.map(f => (
-                      <div key={f} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.875rem', color: 'var(--slate)' }}>
-                        <div style={{ width: '16px', height: '1.5px', background: s.color, flexShrink: 0 }}/>
-                        {f}
-                      </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                <div
+                  className="reveal"
+                  style={{
+                    background: '#FFFFFF',
+                    border: '1px solid var(--border)',
+                    borderRadius: 'var(--r-lg)',
+                    padding: '2rem',
+                    boxShadow: 'var(--shadow-sm)',
+                  }}
+                >
+                  <h3
+                    className="mono"
+                    style={{
+                      fontSize: '0.72rem',
+                      fontWeight: 700,
+                      letterSpacing: '0.14em',
+                      textTransform: 'uppercase',
+                      color: service.accent,
+                      marginBottom: '1.15rem',
+                    }}
+                  >
+                    Capabilities Included
+                  </h3>
+                  <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
+                    {service.features.map((feat) => (
+                      <li
+                        key={feat}
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '0.65rem',
+                          fontSize: '0.9rem',
+                          fontWeight: 600,
+                          color: 'var(--ink-2)',
+                        }}
+                      >
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke={service.accent}
+                          strokeWidth="2.5"
+                          style={{ flexShrink: 0 }}
+                        >
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        {feat}
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
 
-                <div style={{ background: `${s.color}08`, border: `1px solid ${s.color}20`, borderRadius: 'var(--radius-lg)', padding: '1.5rem' }}>
-                  <div style={{ fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: s.color, marginBottom: '0.75rem' }}>Ideal For</div>
-                  {s.ideal.map(item => (
-                    <div key={item} style={{ fontSize: '0.82rem', color: 'var(--slate)', marginBottom: '0.4rem', paddingLeft: '1rem', position: 'relative' }}>
-                      <span style={{ position: 'absolute', left: 0, color: s.color }}>→</span>
-                      {item}
-                    </div>
-                  ))}
+                <div
+                  className="reveal"
+                  style={{
+                    background: `${service.accent}09`,
+                    border: `1px solid ${service.accent}26`,
+                    borderRadius: 'var(--r-lg)',
+                    padding: '1.65rem 2rem',
+                  }}
+                >
+                  <h3
+                    className="mono"
+                    style={{
+                      fontSize: '0.7rem',
+                      fontWeight: 700,
+                      letterSpacing: '0.14em',
+                      textTransform: 'uppercase',
+                      color: service.accent,
+                      marginBottom: '0.9rem',
+                    }}
+                  >
+                    Best Suited For
+                  </h3>
+                  <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                    {service.ideal.map((fit) => (
+                      <li
+                        key={fit}
+                        style={{
+                          fontSize: '0.86rem',
+                          color: 'var(--ink-2)',
+                          display: 'flex',
+                          alignItems: 'flex-start',
+                          gap: '0.55rem',
+                        }}
+                      >
+                        <span style={{ color: service.accent, fontWeight: 700 }}>→</span>
+                        {fit}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </div>
@@ -146,30 +269,61 @@ export default function Services() {
         </section>
       ))}
 
-      {/* CTA */}
-      <section style={{ padding: '5rem 0', background: 'var(--blue)', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)', backgroundSize: '32px 32px', pointerEvents: 'none' }}/>
-        <div className="container" style={{ position: 'relative', textAlign: 'center' }}>
-          <h2 style={{ fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: 'clamp(2rem,4vw,3rem)', color: 'white', letterSpacing: '-0.02em', marginBottom: '1rem' }}>
-            Not Sure Which Service You Need?
-          </h2>
-          <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1rem', marginBottom: '2rem' }}>
-            Most clients need a combination. Let's talk and figure out what's right for you.
-          </p>
-          <Link href="/contact" className="btn" style={{ background: 'white', color: 'var(--blue)', fontWeight: 700 }}>
-            Book a Free Consultation
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </Link>
+      {/* 5-PILLAR SEARCH & AI MATRIX */}
+      <section id="search-architecture" className="section section--dark" aria-labelledby="matrix-heading">
+        <div className="container">
+          <div style={{ maxWidth: '720px' }}>
+            <div className="eyebrow eyebrow--dark" style={{ marginBottom: '0.9rem' }}>
+              <span className="eyebrow-dot" />
+              Unified Optimization Stack
+            </div>
+            <h2 id="matrix-heading" className="section-heading section-heading--light reveal">
+              Built-In SEO, AEO, GEO, AIO &amp; SXO<br />
+              <em>Across Every Engagement.</em>
+            </h2>
+            <p style={{ marginTop: '1rem', color: 'rgba(255,255,255,0.72)', fontSize: '0.98rem', lineHeight: 1.75 }}>
+              We don’t treat optimization as an expensive post-launch add-on. Every platform and growth sprint we execute aligns technical speed, human UX, and machine-readable authority.
+            </p>
+          </div>
+
+          <div className="pillars-grid">
+            {optimizationPillars.map((pillar) => (
+              <article key={pillar.code} className="pillar-card reveal">
+                <div>
+                  <span className="pillar-code">{pillar.code}</span>
+                  <h3 className="pillar-name">{pillar.name}</h3>
+                  <p className="pillar-summary">{pillar.summary}</p>
+                </div>
+                <div className="pillar-metric">→ {pillar.metric}</div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
-      <Footer />
-
-      <style jsx>{`
-        @media (max-width: 860px) {
-          .service-detail-grid { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
+      {/* CTA */}
+      <section className="section">
+        <div className="container">
+          <div className="cta-banner">
+            <div className="cta-banner__content">
+              <h2 className="section-heading section-heading--light" style={{ marginBottom: '0.75rem' }}>
+                Need a Combined Engineering + Growth Roadmap?
+              </h2>
+              <p style={{ color: 'rgba(255,255,255,0.78)', fontSize: '1rem', lineHeight: 1.7 }}>
+                Most partners combine Next.js web engineering with ongoing SEO/GEO search growth. Let’s design the exact scope your targets require.
+              </p>
+            </div>
+            <div className="cta-banner__actions">
+              <Link href="/contact" className="btn btn-white">
+                Request Custom Proposal
+                <svg className="icon-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.2">
+                  <path d="M3 8h10M9 4l4 4-4 4" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   )
 }

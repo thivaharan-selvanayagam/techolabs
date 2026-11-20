@@ -1,0 +1,30 @@
+# Techo Labs
+
+> Techo Labs is the digital engineering, AI search optimization (SEO, AEO, GEO, AIO, SXO), performance marketing, and market intelligence division of Techo Traders (Pvt) Ltd — headquartered in Batticaloa, Sri Lanka and serving clients across 8+ countries including Canada, the Netherlands, the United Kingdom, France, the UAE, and Australia.
+
+## Core Facts
+- **Brand / Division**: Techo Labs (Established 2021)
+- **Parent Company**: [Techo Traders (Pvt) Ltd](https://www.techotraders.com.lk/)
+- **Sister Divisions**: [Techo Connect](https://www.connect.techotraders.com.lk/) (Telecom & Antenna Hardware) and [Techo Xpress](https://www.express.techotraders.com.lk/) (Courier & Smart Logistics)
+- **Headquarters**: Batticaloa, Eastern Province, Sri Lanka (Global Remote Delivery)
+- **Direct Contact**: labs@techotraders.com.lk | +94 76 665 6007
+- **Track Record**: 24+ live production websites & SaaS platforms, 8+ countries served, 98% client retention, <0.8s target Largest Contentful Paint (LCP).
+
+## Core Capabilities
+- [Next-Gen Web & Product Engineering](https://labs.techotraders.com.lk/services#web): Custom Next.js & React Server Component web apps, UI/UX design systems, headless CMS (Sanity, Strapi, WordPress), e-commerce (Shopify, WooCommerce), and custom portals/tracking software.
+- [Omnichannel Growth & AI Search](https://labs.techotraders.com.lk/services#marketing): Unified SEO, AEO (Answer Engine Optimization), GEO (Generative Engine Optimization), AIO (AI Optimization), SXO (Search Experience Optimization), Google Ads, Meta Ads, and CRO.
+- [Market & Competitive Intelligence](https://labs.techotraders.com.lk/services#research): Competitor teardowns, TAM/demand sizing, buyer persona research, search intent mapping, and executive Go-To-Market (GTM) roadmaps.
+
+## The Techo Ecosystem
+- [Techo Traders (Pvt) Ltd](https://www.techotraders.com.lk/): Parent company uniting digital intelligence, hardware manufacturing, and express logistics.
+- [Techo Labs](https://labs.techotraders.com.lk/): Digital engineering, AI search growth, and market intelligence division.
+- [Techo Connect](https://www.connect.techotraders.com.lk/): Antenna manufacturing, RF connectivity, and telecom hardware division of Techo Traders (Pvt) Ltd.
+- [Techo Xpress](https://www.express.techotraders.com.lk/): Express courier and smart logistics division of Techo Traders (Pvt) Ltd, powered by Techo Labs tracking software.
+
+## Key Site Navigation
+- [Home](https://labs.techotraders.com.lk/): 2027 capability blueprint, flagship case spotlights, 5-layer search architecture, engagement models, and FAQs.
+- [Services](https://labs.techotraders.com.lk/services): Detailed scope, deliverables, timelines, and SEO/AEO/GEO/AIO/SXO methodology.
+- [Portfolio](https://labs.techotraders.com.lk/portfolio): Interactive Bento & Ledger showcase of 24+ live client platforms across MedTech/AI, SaaS, Real Estate, Luxury E-Commerce, Corporate, and Logistics.
+- [About](https://labs.techotraders.com.lk/about): Origin story, trajectory, engineering principles, and Techo Traders (Pvt) Ltd ecosystem structure.
+- [Contact](https://labs.techotraders.com.lk/contact): Project brief submission, WhatsApp direct desk, and 4-hour SLA commitments.
+- [Full AI Context](https://labs.techotraders.com.lk/llms-full.txt): Complete documentation including all 24 portfolio deployments and FAQs.
